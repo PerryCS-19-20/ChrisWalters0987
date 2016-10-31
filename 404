@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+
+<HTML>
+	<Head>
+		<Title>Blue Screen Of Death</Title>
+		
+		<link rel="icon" type="image/x-icon" href="http://kompozer-tutorial.com/BootGifts/Other%20Images/404.png" />
+		
+		<Style>
+		
+			Body{
+				background: #3498db;
+			}
+			
+			Body {
+				-webkit-box-sizing: content-box;
+				-moz-box-sizing: content-box;
+				box-sizing: content-box;
+				border: none;
+				font: normal 20px/1 Arial, Helvetica, sans-serif;
+				color: white;
+				-o-text-overflow: ellipsis;
+				text-overflow: ellipsis;
+				text-shadow: 4px 4px 6px rgba(0,0,0,0.5) ;
+			}
+			
+			.BigText {
+				-webkit-box-sizing: content-box;
+				-moz-box-sizing: content-box;
+				box-sizing: content-box;
+				left: 0;
+				<!-- margin: 0 0 0 0; -->
+				border: none;
+				font: normal normal bold 220px/1 Arial, Helvetica, sans-serif;
+				color: white;
+				-o-text-overflow: ellipsis;
+				text-overflow: ellipsis;
+				background: #3498db;
+			}
+			
+		</Style>
+	</Head>
+	
+	<Body><Center>
+		<H1 class="BigText">:(</H1><br><br><br>
+		<H1> Error: 404 </H1>
+		<H2>Your Web Browser Ran Into A Problem, <br>The Web Page You Were Looking For Is No Where To Be Found.<br>Click This To Go Back To Homepage.</H2>
+	</Center></Body>
+</HTML>
