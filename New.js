@@ -1,40 +1,4 @@
-<!DOCTYPE HTML>
-
-<HTML>
-	<Head>
-		<Title> Error: 404 </Title>
-		
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-
-		<script type="text/javascript" src="https://static.codehs.com/gulp/92e04542e6a91981328753ce16a5683a84a32b6e/chs-js-lib/chs.js"></script>
-
-
-		<style>
-			canvas {
-			border: 1px solid #6DBDD6;
-			display: inline-block;
-			vertical-align: top;
-		}
-
-		Body{
-			background-color: #404040;
-			Color: #6DBDD6;
-		}
-		
-		pre {
-			border: 1px solid black;
-			display: inline-block;
-			width: 600px;
-			height: 600px;
-			background-color: #6DBDD6;
-		}
-		
-		</style>
-		
-		<Script>
-			window.onload = function() {
-
-			var WIDTH = 600;
+var WIDTH = 600;
 var HEIGHT = 600;
 
 var WINNING_LINE_WIDTH = 10;
@@ -211,11 +175,11 @@ function MouseWasClicked(e)
 
 function CheckIfSomeoneWon(A,B,C,D,E,F,X1,Y1,X2,Y2)
 {
-	if(newGrid.get(A, B) == newGrid.get(C, D) == newGrid.get(E, F) == "4" && newGrid.get(A, B) == newGrid.get(C, D) == newGrid.get(E, F) != null || newGrid.get(A, B) == newGrid.get(C, D) == newGrid.get(E, F) == "0" && newGrid.get(A, B) == newGrid.get(C, D) == newGrid.get(E, F) != null)
+	if(newGrid.get(A, B) == newGrid.get(C, D) == newGrid.get(E, F) == "4" || newGrid.get(A, B) == newGrid.get(C, D) == newGrid.get(E, F) == "0")
 	{
 		var newLine = new Line(X1, Y1, X2, Y2);
-		newLine.setColor(Color.red);
-		add(newLine);
+                newLine.setColor(Color.red);
+                add(newLine);
 	}
 }
 
@@ -247,24 +211,3 @@ function drawLines(X1,Y1,X2,Y2){
     line.setColor(Color.BLACK);
     add(line);
 }
-
-				if (typeof start === 'function') {
-					start();
-				}
-			}
-		</Script>
-		
-	</Head>
-	
-	<Body><Center>
-		<H1> Error: 404 </H1>
-		<H2> Page Not Found! </H2>
-		<H2> Play Tic Tac Toe? </H2>
-		
-		<canvas
-		width="600"
-		height="600"
-		class="codehs-editor-canvas"></canvas>
-		
-	</Body></Center>
-</HTML>
