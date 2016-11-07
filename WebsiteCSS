@@ -1,0 +1,18 @@
+canvas {
+  border: 1px solid #6DBDD6;
+  display: inline-block;
+  vertical-align: top;
+}
+
+Body{
+  background-color: #404040;
+  Color: #6DBDD6;
+}
+		
+pre {
+  border: 1px solid black;
+  display: inline-block;
+  width: 600px;
+  height: 600px;
+  background-color: #6DBDD6;
+}
