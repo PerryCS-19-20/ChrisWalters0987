@@ -24,7 +24,7 @@ class="codehs-editor-canvas"></canvas>
 <script>
 window.onload = function() {
 
-    var DELAY = 40;
+var DELAY = 40;
 var SPEED = 5;
 var MAX_DY = 12;
 
@@ -118,7 +118,7 @@ function start(){
 
 function onClick()
 {
-    remove(StartText);
+    removeAll();
     setup();
     addTerrain();
     addObstacal();
@@ -225,6 +225,12 @@ function lose(){
     loser.setPosition(getWidth() / 2 - loser.getWidth() / 2, getHeight()/2);
     loser.setColor(Color.RED);
     add(loser);
+    
+   StartText = new Text("Retry!");
+   StartText.setColor(Color.RED)
+   StartText.setPosition(getWidth() / 2 - StartText.getWidth() / 2, getHeight()/2 + 40);
+   add(StartText);
+   mouseDownMethod(onClick);
 }
 
 function getCollider(){
