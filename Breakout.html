@@ -1,0 +1,259 @@
+
+<html>
+<head>
+<title>My Breakout</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<script type="text/javascript" src="https://static.codehs.com/gulp/296bfc2f91dd95c8e46c02b28d5b279c16050aff/chs-js-lib/chs.js"></script>
+
+<link rel="stylesheet" type="text/css" href="WebsiteCSS.css">
+<link rel="shortcut icon" type="image/ico" href="favicon.ico">
+
+</head>
+
+<body><Center>
+<h1>My Breakout</h1>
+
+<canvas
+width="400"
+height="500"
+class="codehs-editor-canvas"></canvas>
+
+<script>
+window.onload = function() {
+
+    //Stuff I Need
+var NUM_ROWS = 8;
+var BRICK_TOP_OFFSET = 10;
+var BRICK_SPACING = 2;
+var NUM_BRICKS_PER_ROW = 10;
+var BRICK_HEIGHT = 10;
+var SPACE_FOR_BRICKS = getWidth() - (NUM_BRICKS_PER_ROW + 1) * BRICK_SPACING;
+var BRICK_WIDTH = SPACE_FOR_BRICKS / NUM_BRICKS_PER_ROW;
+var newX = 2;
+var newY = BRICK_TOP_OFFSET;
+var PADDLE_WIDTH = 80;
+var PADDLE_HEIGHT = 15;
+var PADDLE_OFFSET = 10;
+var BALL_RADIUS = 13;
+var dx = 2;
+var dy = 2;
+var points = 0;
+var lives = 3;
+var ballMove = false;
+var ifLose = false;
+var howManyBricks = 80;
+var WinYse = false;
+
+ // Colors
+var myGray = new Color(32,32,32);
+var myRed = new Color(200,0,0);
+var myGreen = new Color(0,200,0);
+var myBlue = new Color(0,0,200);
+
+// Sets the background color
+setBackgroundColor(myGray);
+
+// Makes the ball
+var ball = new Circle(BALL_RADIUS);
+ball.setPosition(getWidth() / 2, getHeight() / 2);
+ball.setColor(Color.black);
+add(ball);
+
+// Makes the white ball
+var whiteBall = new Circle(BALL_RADIUS - 2);
+whiteBall.setPosition(getWidth() / 2, getHeight() / 2);
+whiteBall.setColor(Color.white);
+add(whiteBall);
+
+// Makes the paddle
+var paddle = new Rectangle(PADDLE_WIDTH, PADDLE_HEIGHT);
+paddle.setPosition(getWidth() / 2, getHeight() - 20);
+paddle.setColor(Color.black);
+add(paddle);
+
+// White paddle
+var whitePaddle = new Rectangle(PADDLE_WIDTH - 4, PADDLE_HEIGHT - 4);
+whitePaddle.setPosition(getWidth() / 2 + 2, getHeight() - 20 + 2);
+whitePaddle.setColor(Color.white);
+add(whitePaddle);
+            
+// Puts the score on screen
+var scoreText = new Text("Score: " + points * 100, "10pt Arial");
+scoreText.setPosition(3, getHeight() - 2);
+scoreText.setColor(Color.white);
+add(scoreText);
+
+// Lives on the screen
+var livesText = new Text("Lives: " + lives, "10pt Arial");
+livesText.setPosition(getWidth() - 50, getHeight() - 2);
+livesText.setColor(Color.white);
+add(livesText);
+
+// Start function
+function start(){
+      setTimer(doALot, 1);
+      mouseMoveMethod(moveBox);
+      placeBricks();
+      setTimer(winOrLose, 1);
+      mouseClickMethod(mouseClick);
+}
+
+// On mouse click move ball == true
+function mouseClick(e){
+    ballMove = true;
+}
+
+// Moves the paddle
+function moveBox(e){
+      paddle.setPosition(e.getX() - 40, getHeight() - 30);
+      whitePaddle.setPosition(e.getX() - 40 + 2, getHeight() - 30 + 2);
+}
+
+//Function that does a lot
+function doALot(){
+    if(ifLose == false){
+        for(var i = 0; i < 2; i++){
+            if(ballMove == true){
+                checkWalls();
+                whiteBall.move(dx,dy);
+                ball.move(dx, dy);
+                bounceOffPaddle();
+                bounceOffPointBoxes();
+                scoreText.setText("Score: " + points * 100);
+            }
+         }
+    }
+}
+
+// Checks the walls
+function checkWalls(){
+      if(ball.getX() + ball.getRadius() > getWidth()){
+            dx = -dx;
+      }
+
+      if(ball.getX() - ball.getRadius() < 0){
+            dx = -dx;
+      }
+
+      if(ball.getY() + ball.getRadius() > getHeight()){
+            if(WinYse == false){
+                  ball.setPosition(getWidth() / 2, getHeight() / 2);
+                  whiteBall.setPosition(getWidth() / 2, getHeight() / 2);
+                  ballMove = false;
+                  lives--;
+                  livesText.setText("Lives: " + lives);
+            }else{
+                  dy = +dy;
+            }
+      }
+
+      if(ball.getY() - ball.getRadius() < 0){
+            dy = -dy;
+      }
+ }
+
+ // Makes the bricks
+function placeBricks(){
+      makeBrick(myRed);
+      makeBrick(Color.ORANGE);
+      makeBrick(myGreen);
+      makeBrick(myBlue);
+}
+
+function bounceOffPointBoxes(){
+        var elem = getElementAt(ball.getX(), ball.getY() - ball.getRadius());
+        if(elem != null && elem != livesText && elem != paddle && elem != whitePaddle && elem != scoreText)
+        {
+            dy = -dy;
+            remove(elem);
+            points ++;
+            howManyBricks--;
+        }
+       
+       elem = getElementAt(ball.getX() + ball.getRadius(), ball.getY());
+       if(elem != null && elem != livesText && elem != paddle && elem != whitePaddle && elem != scoreText)
+       {
+            dx = -dx;
+            remove(elem);
+            points ++;
+            howManyBricks--;
+       }
+       
+       elem = getElementAt(ball.getX() - ball.getRadius(), ball.getY());
+       if(elem != null && elem != livesText && elem != paddle && elem != whitePaddle && elem != scoreText)
+       {
+            dx = -dx;
+            remove(elem);
+            points ++;
+            howManyBricks--;
+       }
+}
+
+
+function bounceOffPaddle(){
+    if(ball.getY() + ball.getRadius() >= paddle.getY()
+      && ball.getX() >= paddle.getX()
+      && ball.getX() <= paddle.getX() + paddle.getWidth())
+      {
+            dy = -Math.abs(dy);
+      }
+}
+
+function makeBrick(color){
+      newX = 2;
+      for(var i = 0; i < 10; i++){
+            var rect = new Rectangle(35, 12);
+            rect.setPosition(newX, newY);
+            rect.setColor(color);
+            add(rect);
+            newX += BRICK_WIDTH + 2;
+       }
+      newY += 15;
+      newX = 2;
+      for(var i = 0; i < 10; i++){
+            var rect = new Rectangle(35, 12);
+            rect.setPosition(newX, newY);
+            rect.setColor(color);
+            add(rect);
+            newX += BRICK_WIDTH + 2;
+      }
+            newY += 15;
+ }
+
+function winOrLose(){
+    if(points == 80){
+        youWin();
+    }else if(points >= 81){
+           youWin();
+    }else if(lives == 0){
+        youLose();
+    }
+}
+
+function youWin(){
+      WinYse = true;
+    var winText = new Text("Winner!!!", "30pt Arial");
+    winText.setPosition(getWidth() / 2 - 65, getHeight() / 2 - 40);
+    winText.setColor(Color.white);
+    add(winText);
+}
+
+function youLose(){
+    var loseText = new Text("Loser!!!", "30pt Arial");
+    loseText.setPosition(getWidth() / 2 - 65, getHeight() / 2 - 40);
+    loseText.setColor(Color.white);
+    add(loseText);
+    ifLose = true;
+}
+
+
+    if (typeof start === 'function') {
+        start();
+    }
+};
+</script>
+
+</body>
+</html>

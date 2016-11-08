@@ -1,12 +1,12 @@
 canvas {
-  border: 1px solid #6DBDD6;
+  border: 1px solid #FFFFFF;
   display: inline-block;
   vertical-align: top;
 }
 
 body{
-  background-color: #404040;
-  Color: #6DBDD6;
+  background-color: #202020;
+  Color: #FFFFFF;
 }
 		
 pre {

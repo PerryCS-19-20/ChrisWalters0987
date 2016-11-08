@@ -28,7 +28,7 @@ var WhosTurn = "4";
 var someoneWon = false;
 var CanPlace = false;
 
-var NewColor = new Color(109,189,214);
+var NewColor = new Color(255,255,255);
 
 function start(){
     functionForLines();
@@ -204,27 +204,7 @@ function CheckIfSomeoneWon(A,B,C,D,E,F,X1,Y1,X2,Y2)
 		newLine.setColor(Color.red);
                 newLine.setLineWidth(10);
 		add(newLine);
-                someoneWon = true;
-                
-                var txt = new Text("WINNER!!!!", "30pt Arial");
-                txt.setPosition(HEIGHT / 2 - (txt.getWidth() / 2) + 3, WIDTH / 2 - 3);
-                txt.setColor(Color.BLACK);
-                add(txt);
-                
-                var txt = new Text("WINNER!!!!", "30pt Arial");
-                txt.setPosition(HEIGHT / 2 - (txt.getWidth() / 2), WIDTH / 2);
-                txt.setColor(NewColor);
-                add(txt);  
-                
-                var txt = new Text("Page Still Not Found!", "30pt Arial");
-                txt.setPosition(HEIGHT / 2 - (txt.getWidth() / 2) + 3, WIDTH / 2 + 32);
-                txt.setColor(Color.BLACK);
-                add(txt);
-                
-                var Page = new Text("Page Still Not Found!", "30pt Arial");
-                Page.setPosition(HEIGHT / 2 - (Page.getWidth() / 2), WIDTH / 2 + 35);
-                Page.setColor(NewColor);
-                add(Page);
+                someoneWon = true;           
 	}
 }
 
