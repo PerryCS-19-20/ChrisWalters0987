@@ -231,6 +231,9 @@ function lose(){
    StartText.setPosition(getWidth() / 2 - StartText.getWidth() / 2, getHeight()/2 + 40);
    add(StartText);
    mouseDownMethod(onClick);
+   
+    points = 0;
+    score.setText(points);
 }
 
 function getCollider(){
