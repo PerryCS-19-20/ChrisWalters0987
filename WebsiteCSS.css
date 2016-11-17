@@ -9,6 +9,11 @@ body{
   Color: #FFFFFF;
 }
 		
+textarea{
+  background-color: #202020;
+  Color: #FFFFFF;
+}
+
 pre {
   border: 1px solid black;
   display: inline-block;
