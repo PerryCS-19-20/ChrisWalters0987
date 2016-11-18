@@ -1,38 +1,36 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>To Do List!</title>
-        <link rel="stylesheet" type="text/css" href="WebsiteCSS.css">
-        <link rel="shortcut icon" type="image/ico" href="favicon.ico">
-        
+<!DOCTYPE HTML>
+
+<HTML>
+    <Head>
+        <Title>To Do List!</Title> <!-- Title of webpage -->
+        <link rel="stylesheet" type="text/css" href="WebsiteCSS.css"> <!-- Stylesheet for web page -->
+        <link rel="shortcut icon" type="image/ico" href="favicon.ico"> <!-- Fav-Icon for web page -->
+		
         <Script>
-            function BUTTONCLICKED()
+            function BUTTONCLICKED() // Function for button.
             {
-				var AddNew;
-                var userInput = document.getElementById("inputText");
-                for(var i = 0; i < 100; i++)
+                var AddLI; // Var for the LI.
+                var userText = document.getElementById("inputText"); // Var for the text from the user.
+				
+                for(var C = 0; C != 100; C++) //C++ :D
                 {
-					AddNew = document.createElement("LI");
-					AddNew.textContent = "I will not " + userInput.value;
-					document.getElementById("ThisList").appendChild(AddNew);
-                }
+                    AddLI = document.createElement("LI"); // Sets AddLI to an element LI.
+                    AddLI.textContent = "I will not " + userInput.value; // Sets the LI text to "I will not" + user text.
+                    document.getElementById("ThisList").appendChild(AddLI); // Adds the LI to the OL.
+		}
             }
         </Script>
-    </head>
-    <body>
-        <center>
-            <Hr><br><br>
-            <textarea rows="10" cols="80" id="inputText" > Enter Text Here: </textarea>
-            <br><br>
-            <Button onclick="BUTTONCLICKED()">This Is A Button!</Button>
-            <Br><br>
-            <span id="s1"> </span>
-            <br><br>
-            </Center>
-            <ol id="ThisList">
-            </ol>
-            </Center>
-            <br><br><hr>
-        </center>
-    </body>
-</html>
+    </Head>
+    <Body>
+        <Center> <!-- Moves all text to center screen -->
+            <Hr> <Br> <Br> <!-- Adds line and 2 line text breaks -->
+            <TextArea rows = "80" cols = "80" id = "inputText">Enter Text Here:</TextArea> <!-- Text area for the user to use -->
+            <Br> <Br> <!-- 2 line text breaks -->
+            <Button onclick = "BUTTONCLICKED()">This Is A Button!</Button> <!-- Adds button to screen -->
+            <Br> <Br> <!-- 2 Line text breaks -->
+            <Span id = "s1"></Span> <!-- Adds empty span to web page -->
+            <Br> <Br> <!-- Adds 2 line text breaks -->
+        </Center>
+        <OL id = "ThisList"></OL> <!-- Empty list -->
+	</Body>
+</HTML>
