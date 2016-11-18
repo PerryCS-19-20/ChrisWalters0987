@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>To Do List!</title>
+        <link rel="stylesheet" type="text/css" href="WebsiteCSS.css">
+        <link rel="shortcut icon" type="image/ico" href="favicon.ico">
+        
+        <Script>
+            function BUTTONCLICKED()
+            {
+				var AddNew;
+                var userInput = document.getElementById("inputText");
+                for(var i = 0; i < 100; i++)
+                {
+					AddNew = document.createElement("LI");
+					AddNew.textContent = "I will not " + userInput.value;
+					document.getElementById("ThisList").appendChild(AddNew);
+                }
+            }
+        </Script>
+    </head>
+    <body>
+        <center>
+            <Hr><br><br>
+            <textarea rows="10" cols="80" id="inputText" > Enter Text Here: </textarea>
+            <br><br>
+            <Button onclick="BUTTONCLICKED()">This Is A Button!</Button>
+            <Br><br>
+            <span id="s1"> </span>
+            <br><br>
+            </Center>
+            <ol id="ThisList">
+            </ol>
+            </Center>
+            <br><br><hr>
+        </center>
+    </body>
+</html>
