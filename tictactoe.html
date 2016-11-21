@@ -3,16 +3,25 @@
 <HTML>
     <Head>
         <Title>Tic Tac Toe</Title>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-        <script type="text/javascript" src="https://static.codehs.com/gulp/92e04542e6a91981328753ce16a5683a84a32b6e/chs-js-lib/chs.js"></script>
         <link rel = "stylesheet" type = "text/css" href = "WebsiteCSS.css">
         <link rel="shortcut icon" type="image/ico" href="favicon.ico">
         
 		  <Script>
-				var Plyaer = "X";
-				function onClick()
+				var Players = "X";
+				function onClick(ID)
 				{
-					
+					var Cell = document.getElementById(ID);
+					var Valid = Cell.textContent == "";
+					if(Players == "X" && Valid)
+					{
+						Cell.textContent = "X";
+						Players = "O";
+					}
+					else if(Players == "O" && Valid)
+					{
+						Cell.textContent = "O";
+						Players = "X";
+					}
 				}
 		  </Script>
 		  
@@ -32,19 +41,19 @@
 		<Hr><Br><Br>
         <Table>
             <Tr>
-                <Td id = "TopLeft" onclick = "onClick()"></Td>
-                <Td id = "TopMid"></Td>
-                <Td id = "TopRight"></Td>
+                <Td id = "TopLeft" onclick = "onClick('TopLeft')"></Td>
+                <Td id = "TopMid" onclick = "onClick('TopMid')"></Td>
+                <Td id = "TopRight" onclick = "onClick('TopRight')"></Td>
             </Tr>
             <Tr>
-                <Td id = "MidLeft"></Td>
-                <Td id = "MidMid"></Td>
-                <Td id = "MidRight"></Td>
+                <Td id = "MidLeft" onclick = "onClick('MidLeft')"></Td>
+                <Td id = "MidMid" onclick = "onClick('MidMid')"></Td>
+                <Td id = "MidRight" onclick = "onClick('MidRight')"></Td>
             </Tr>
             <Tr>
-                <Td id = "BottomLeft"></Td>
-                <Td id = "BottomMid"></Td>
-                <Td id = "BottomRight"></Td>
+                <Td id = "BottomLeft" onclick = "onClick('BottomLeft')"></Td>
+                <Td id = "BottomMid" onclick = "onClick('BottomMid')"></Td>
+                <Td id = "BottomRight" onclick = "onClick('BottomRight')"></Td>
             </Tr>
         </Table>
 		  <Br>
