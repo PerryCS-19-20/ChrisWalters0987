@@ -2,36 +2,63 @@
 
 <HTML>
     <Head>
-        <Title>Chalk Bored!</Title> <!-- Title of webpage -->
-        <link rel="stylesheet" type="text/css" href="WebsiteCSS.css"> <!-- Stylesheet for webpage -->
-        <link rel="shortcut icon" type="image/ico" href="favicon.ico"> <!-- Fav-Icon for webpage -->
-		
+        <Title>Tic Tac Toe</Title>
+        <link rel = "stylesheet" type = "text/css" href = "WebsiteCSS.css">
+        <link rel="shortcut icon" type="image/ico" href="favicon.ico">
+
         <Script>
-            function BUTTONCLICKED() // Function for button.
+            var Players = "X";
+            function onClick(ID)
             {
-                var AddLI; // Var for the LI.
-                var userText = document.getElementById("inputText"); // Var for the text from the user.
-				
-                for(var C = 0; C != 100; C++) //C++ :D
+                var Cell = document.getElementById(ID);
+                var Valid = Cell.textContext == "";
+                if (Players == "X" && Valid)
                 {
-                    AddLI = document.createElement("LI"); // Sets AddLI to an element LI.
-                    AddLI.textContent = "I will not " + userText.value; // Sets the LI text to "I will not" + user text.
-                    document.getElementById("ThisList").appendChild(AddLI); // Adds the LI to the OL.
-		}
+                    Cell.textContext = "X";
+                    Players = "O";
+                }
+                else if (Players == "O" && Valid)
+                {
+                    Cell.textContext = "O";
+                    Players = "X";
+                }
             }
         </Script>
+
+        <Style>
+            Td{
+                height: 200PX;
+                width: 200PX;
+                border: 1px solid White; <!-- Do border-bottom to make it better -->
+                font-size: 80px;
+            }
+        </Style>
     </Head>
+
     <Body>
-        <Center> <!-- Moves all text to center screen -->
-            <Hr> <Br> <Br> <!-- Adds line and 2 line text breaks -->
-            <TextArea rows = "30" cols = "80" id = "inputText">Enter Text Here:</TextArea> <!-- Text area for the user to use -->
-            <Br> <Br> <!-- 2 line text breaks -->
-            <Button onclick = "BUTTONCLICKED()">This Is A Button!</Button> <!-- Adds button to screen -->
-            <Br> <Br> <!-- 2 Line text breaks -->
-            <Span id = "s1"></Span> <!-- Adds empty span to webpage -->
-            <Br> <Br> <!-- Adds 2 line text breaks -->
-        </Center>
-        <OL id = "ThisList"></OL> <!-- Empty list -->
-        <Br> <Br> <Hr> <!-- Adds line and 2 line text breaks -->
-	</Body>
+    <Center>
+        <H1>Tic Tac Toe!</H1>
+        <Hr><Br><Br>
+        <Table>
+            <Tr>
+                <Td id = "TopLeft" onclick = "onClick('TopLeft')"></Td>
+                <Td id = "TopMid" onclick = "onClick('TopMid')"></Td>
+                <Td id = "TopRight" onclick = "onClick('TopRight')"></Td>
+            </Tr>
+            <Tr>
+                <Td id = "MidLeft" onclick = "onClick('MidLeft')"></Td>
+                <Td id = "MidMid" onclick = "onClick('MidMid')"></Td>
+                <Td id = "MidRight" onclick = "onClick('MidRight')"></Td>
+            </Tr>
+            <Tr>
+                <Td id = "BottomLeft" onclick = "onClick('BottomLeft')"></Td>
+                <Td id = "BottomMid" onclick = "onClick('BottomMid')"></Td>
+                <Td id = "BottomRight" onclick = "onClick('BottomRight')"></Td>
+            </Tr>
+        </Table>
+        <Br>
+        <H2 style = "color: Red" ID = "PlayersTurn">Players Turn: X</H2>
+        <Br><Hr>
+    </Center>
+</Body>
 </HTML>
