@@ -6,6 +6,8 @@
         <link rel = "stylesheet" type = "text/css" href = "WebsiteCSS.css">
         <link rel="shortcut icon" type="image/ico" href="favicon.ico">
 
+        <Script src = "https://perryma.tk/se/holidays.js";></Script>
+
         <Script>
             var Players = "X";
             var SomeoneWon = false;
@@ -15,7 +17,7 @@
                 var Valid = Cell.textContent == "";
                 if (Players == "X" && Valid && !SomeoneWon)
                 {
-                    Cell.textContent = "X";
+                    Cell.textContent = getLetter(Players);
                     Players = "O";
                     var GrabText = document.getElementById("PlayersTurn");
                     var SetText = "Players Turn: O";
@@ -24,7 +26,7 @@
                 }
                 else if (Players == "O" && Valid && !SomeoneWon)
                 {
-                    Cell.textContent = "O";
+                    Cell.textContent = getLetter(Players);
                     Players = "X";
                     var GrabText = document.getElementById("PlayersTurn");
                     var SetText = "Players Turn: X";
@@ -62,6 +64,17 @@
                     GrabText.textContent = (SetText);
                 }
             }
+
+            function getLetter(Letter)
+            {
+                if (holiday() == "Thanksgiving") { if (Letter == "X") { return "n"; } else { return "m"; } }
+                else if (holiday() == "ChriThanksgivingstmas") { if (Letter == "X") { return "p"; } else { return "o"; } }
+                else if (holiday() == "Easter") { if (Letter == "X") { return "d"; } else { return "e"; } }
+                else if (holiday() == "Valentines") { if (Letter == "X") { return "c"; } else { return "a"; } }
+                else if (holiday() == "Halloween") { if (Letter == "X") { return "j"; } else { return "i"; } }
+                else if (holiday() == "4th of July") { if (Letter == "X") { return "g"; } else { return "h"; } }
+                else { return Letter }
+            }
         </Script>
 
         <Style>
@@ -70,7 +83,16 @@
                 width: 200PX;
                 border: 1px solid White;
                 font-size: 150px;
+                font-family: "Geholiday";
                 text-align: center;
+            }
+
+            @font-face
+            {
+                font-family: "Geholiday";
+                scr:url("https://perryma.tk/se/Geholiday.ttf") format("truetpe");
+                font-weight: normal;
+                font-style: normal;
             }
         </Style>
     </Head>
