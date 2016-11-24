@@ -1,37 +1,38 @@
 <!DOCTYPE HTML>
 
 <HTML>
-    <Head>
-        <Title>Chalk Bored!</Title> <!-- Title of webpage -->
-        <link rel="stylesheet" type="text/css" href="WebsiteCSS.css"> <!-- Stylesheet for webpage -->
-        <link rel="shortcut icon" type="image/ico" href="favicon.ico"> <!-- Fav-Icon for webpage -->
+	<Head>
+		<Title>Chalk Bored!</Title>
+        <link rel="stylesheet" type="text/css" href="WebsiteCSS.css">
+        <link rel="shortcut icon" type="image/ico" href="favicon.ico">
 		
-        <Script>
-            function BUTTONCLICKED() // Function for button.
-            {
-                var AddLI; // Var for the LI.
-                var userText = document.getElementById("inputText"); // Var for the text from the user.
+		<Script>
+			function BUTTONCLICKED()
+			{
+                var AddLI;
+                var userText = document.getElementById("inputText");
 				
-                for(var C = 0; C != 100; C++) //C++ :D
+                for(var C = 0; C != 100; C++)
                 {
-                    AddLI = document.createElement("LI"); // Sets AddLI to an element LI.
-                    AddLI.textContent = "I will not " + userText.value; // Sets the LI text to "I will not" + user text.
-                    document.getElementById("ThisList").appendChild(AddLI); // Adds the LI to the OL.
-		}
+                    AddLI = document.createElement("LI");
+                    AddLI.textContent = "I will not " + userText.value;
+                    document.getElementById("ThisList").appendChild(AddLI);
+				}
             }
         </Script>
-    </Head>
-    <Body>
-        <Center> <!-- Moves all text to center screen -->
-            <Hr> <Br> <Br> <!-- Adds line and 2 line text breaks -->
-            <TextArea rows = "30" cols = "80" id = "inputText">Enter Text Here:</TextArea> <!-- Text area for the user to use -->
-            <Br> <Br> <!-- 2 line text breaks -->
-            <Button onclick = "BUTTONCLICKED()">This Is A Button!</Button> <!-- Adds button to screen -->
-            <Br> <Br> <!-- 2 Line text breaks -->
-            <Span id = "s1"></Span> <!-- Adds empty span to webpage -->
-            <Br> <Br> <!-- Adds 2 line text breaks -->
+	</Head>
+	
+	<Body>
+		<Center>
+            <Hr><Br><Br>
+            <TextArea rows = "10" cols = "50" id = "inputText">Enter Text Here:</TextArea>
+            <Br><Br>
+            <Button onclick = "BUTTONCLICKED()">This Is A Button!</Button>
+            <Br><Br>
+            <Span id = "s1"></Span>
+            <Br><Br>
         </Center>
-        <OL id = "ThisList"></OL> <!-- Empty list -->
-        <Br> <Br> <Hr> <!-- Adds line and 2 line text breaks -->
+        <OL id = "ThisList"></OL>
+        <Br><Br><Hr>
 	</Body>
 </HTML>
