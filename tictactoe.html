@@ -5,7 +5,6 @@
         <Title>Tic Tac Toe</Title>
         <link rel = "stylesheet" type = "text/css" href = "WebsiteCSS.css">
         <link rel="shortcut icon" type="image/ico" href="favicon.ico">
-
         <Script src = "https://perryma.tk/se/holidays.js";></Script>
 
         <Script>
@@ -60,7 +59,7 @@
                     Cell2.style.color = "red";
                     Cell3.style.color = "red";
                     var GrabText = document.getElementById("PlayersTurn");
-                    var SetText = "Player " + who + " Wins";
+                    var SetText = "Player " + getLetter(who) + " Wins";
                     GrabText.textContent = (SetText);
                 }
             }
@@ -78,15 +77,16 @@
         </Script>
 
         <Style>
-            Td{
-                height: 200PX;
-                width: 200PX;
-                border: 1px solid White;
-                font-size: 150px;
-                font-family: "Geholiday";
-                text-align: center;
-            }
-
+			.TopLeft{ height: 125px; width: 125px; border-bottom: 3px solid black; border-right: 3px solid black; font-size: 75px; font-family: "Geholiday"; text-align: Center; }
+			.TopCenter{ height: 125px; width: 125px; border-left: 3px solid black; border-bottom: 3px solid black; border-right: 3px solid black; font-size: 75px; font-family: "Geholiday"; text-align: Center; }
+			.TopRight{ height: 125px; width: 125px; border-bottom: 3px solid black; border-left: 3px solid black; font-size: 75px; font-family: "Geholiday"; text-align: Center; }
+			.MidLeft{ height: 125px; width: 125px; border-bottom: 3px solid black; border-right: 3px solid black; border-top: 3px solid black; font-size: 75px; font-family: "Geholiday"; text-align: Center;}
+			.MidCenter{ height: 125px; width: 125px; border: 3px solid black; font-size: 75px; font-family: "Geholiday"; text-align: Center; }
+			.MidRight{ height: 125px; width: 125px; border-bottom: 3px solid black; border-left: 3px solid black; border-top: 3px solid black; font-size: 75px; font-family: "Geholiday"; text-align: Center }			
+			.BottomLeft{ height: 125px; width: 125px; border-right: 3px solid black; border-top: 3px solid black; font-size: 75px; font-family: "Geholiday"; text-align: Center; }
+			.BottomCenter{ height: 125px; width: 125px; border-left: 3px solid black; border-top: 3px solid black; border-right: 3px solid black; font-size: 75px; font-family: "Geholiday"; text-align: Center; }
+			.BottomRight{ height: 125px; width: 125px; border-left: 3px solid black; border-top: 3px solid black; font-size: 75px; font-family: "Geholiday"; text-align: Center; }
+			
             @font-face
             {
                 font-family: "Geholiday";
@@ -103,19 +103,19 @@
         <Hr><Br><Br>
         <Table>
             <Tr>
-                <Td id = "TopLeft" onclick = "onClick('TopLeft')"></Td>
-                <Td id = "TopMid" onclick = "onClick('TopMid')"></Td>
-                <Td id = "TopRight" onclick = "onClick('TopRight')"></Td>
+                <Td class = "TopLeft"id = "TopLeft" onclick = "onClick('TopLeft')"></Td>
+                <Td class = "TopCenter" id = "TopMid" onclick = "onClick('TopMid')"></Td>
+                <Td class = "TopRight" id = "TopRight" onclick = "onClick('TopRight')"></Td>
             </Tr>
             <Tr>
-                <Td id = "MidLeft" onclick = "onClick('MidLeft')"></Td>
-                <Td id = "MidMid" onclick = "onClick('MidMid')"></Td>
-                <Td id = "MidRight" onclick = "onClick('MidRight')"></Td>
+                <Td class = "MidLeft" id = "MidLeft" onclick = "onClick('MidLeft')"></Td>
+                <Td class = "MidCenter" id = "MidMid" onclick = "onClick('MidMid')"></Td>
+                <Td class = "MidRight" id = "MidRight" onclick = "onClick('MidRight')"></Td>
             </Tr>
             <Tr>
-                <Td id = "BottomLeft" onclick = "onClick('BottomLeft')"></Td>
-                <Td id = "BottomMid" onclick = "onClick('BottomMid')"></Td>
-                <Td id = "BottomRight" onclick = "onClick('BottomRight')"></Td>
+                <Td class = "BottomLeft" id = "BottomLeft" onclick = "onClick('BottomLeft')"></Td>
+                <Td class = "BottomCenter" id = "BottomMid" onclick = "onClick('BottomMid')"></Td>
+                <Td class = "BottomRight" id = "BottomRight" onclick = "onClick('BottomRight')"></Td>
             </Tr>
         </Table>
         <Br>
