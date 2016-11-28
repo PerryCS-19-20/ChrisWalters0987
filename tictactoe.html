@@ -8,6 +8,7 @@
         <Script src = "https://perryma.tk/se/holidays.js";></Script>
 
         <Script>
+            var NumberChecked = 0;
             var Players = "X";
             var SomeoneWon = false;
             function onClick(ID)
@@ -41,6 +42,13 @@
                 CheckIfWon("TopRight", "MidRight", "BottomRight");
                 CheckIfWon("TopLeft", "MidMid", "BottomRight");
                 CheckIfWon("TopRight", "MidMid", "BottomLeft");
+                NumberChecked++;
+                if (NumberChecked == 9)
+                {
+                    var GrabText = document.getElementById("PlayersTurn");
+                    var SetText = "No One Won";
+                    GrabText.textContent = (SetText);
+                }
             }
 
             function CheckIfWon(ID1, ID2, ID3)
@@ -66,27 +74,65 @@
 
             function getLetter(Letter)
             {
-                if (holiday() == "Thanksgiving") { if (Letter == "X") { return "n"; } else { return "m"; } }
-                else if (holiday() == "Christmas") { if (Letter == "X") { return "p"; } else { return "o"; } }
-                else if (holiday() == "Easter") { if (Letter == "X") { return "d"; } else { return "e"; } }
-                else if (holiday() == "Valentines") { if (Letter == "X") { return "c"; } else { return "a"; } }
-                else if (holiday() == "Halloween") { if (Letter == "X") { return "j"; } else { return "i"; } }
-                else if (holiday() == "4th of July") { if (Letter == "X") { return "g"; } else { return "h"; } }
-                else { return Letter }
+                if (holiday() == "Thanksgiving") {
+                    if (Letter == "X") {
+                        return "n";
+                    } else {
+                        return "m";
+                    }
+                }
+                else if (holiday() == "Christmas") {
+                    if (Letter == "X") {
+                        return "p";
+                    } else {
+                        return "o";
+                    }
+                }
+                else if (holiday() == "Easter") {
+                    if (Letter == "X") {
+                        return "d";
+                    } else {
+                        return "e";
+                    }
+                }
+                else if (holiday() == "Valentines") {
+                    if (Letter == "X") {
+                        return "c";
+                    } else {
+                        return "a";
+                    }
+                }
+                else if (holiday() == "Halloween") {
+                    if (Letter == "X") {
+                        return "j";
+                    } else {
+                        return "i";
+                    }
+                }
+                else if (holiday() == "4th of July") {
+                    if (Letter == "X") {
+                        return "g";
+                    } else {
+                        return "h";
+                    }
+                }
+                else {
+                    return Letter
+                }
             }
         </Script>
 
         <Style>
-			.TopLeft{ height: 125px; width: 125px; border-bottom: 3px solid black; border-right: 3px solid black; font-size: 75px; font-family: "Geholiday"; text-align: Center; }
-			.TopCenter{ height: 125px; width: 125px; border-left: 3px solid black; border-bottom: 3px solid black; border-right: 3px solid black; font-size: 75px; font-family: "Geholiday"; text-align: Center; }
-			.TopRight{ height: 125px; width: 125px; border-bottom: 3px solid black; border-left: 3px solid black; font-size: 75px; font-family: "Geholiday"; text-align: Center; }
-			.MidLeft{ height: 125px; width: 125px; border-bottom: 3px solid black; border-right: 3px solid black; border-top: 3px solid black; font-size: 75px; font-family: "Geholiday"; text-align: Center;}
-			.MidCenter{ height: 125px; width: 125px; border: 3px solid black; font-size: 75px; font-family: "Geholiday"; text-align: Center; }
-			.MidRight{ height: 125px; width: 125px; border-bottom: 3px solid black; border-left: 3px solid black; border-top: 3px solid black; font-size: 75px; font-family: "Geholiday"; text-align: Center }			
-			.BottomLeft{ height: 125px; width: 125px; border-right: 3px solid black; border-top: 3px solid black; font-size: 75px; font-family: "Geholiday"; text-align: Center; }
-			.BottomCenter{ height: 125px; width: 125px; border-left: 3px solid black; border-top: 3px solid black; border-right: 3px solid black; font-size: 75px; font-family: "Geholiday"; text-align: Center; }
-			.BottomRight{ height: 125px; width: 125px; border-left: 3px solid black; border-top: 3px solid black; font-size: 75px; font-family: "Geholiday"; text-align: Center; }
-			
+            .TopLeft{ height: 125px; width: 125px; border-bottom: 3px solid black; border-right: 3px solid black; font-size: 75px; font-family: "Geholiday"; text-align: Center; }
+            .TopCenter{ height: 125px; width: 125px; border-left: 3px solid black; border-bottom: 3px solid black; border-right: 3px solid black; font-size: 75px; font-family: "Geholiday"; text-align: Center; }
+            .TopRight{ height: 125px; width: 125px; border-bottom: 3px solid black; border-left: 3px solid black; font-size: 75px; font-family: "Geholiday"; text-align: Center; }
+            .MidLeft{ height: 125px; width: 125px; border-bottom: 3px solid black; border-right: 3px solid black; border-top: 3px solid black; font-size: 75px; font-family: "Geholiday"; text-align: Center;}
+            .MidCenter{ height: 125px; width: 125px; border: 3px solid black; font-size: 75px; font-family: "Geholiday"; text-align: Center; }
+            .MidRight{ height: 125px; width: 125px; border-bottom: 3px solid black; border-left: 3px solid black; border-top: 3px solid black; font-size: 75px; font-family: "Geholiday"; text-align: Center }			
+            .BottomLeft{ height: 125px; width: 125px; border-right: 3px solid black; border-top: 3px solid black; font-size: 75px; font-family: "Geholiday"; text-align: Center; }
+            .BottomCenter{ height: 125px; width: 125px; border-left: 3px solid black; border-top: 3px solid black; border-right: 3px solid black; font-size: 75px; font-family: "Geholiday"; text-align: Center; }
+            .BottomRight{ height: 125px; width: 125px; border-left: 3px solid black; border-top: 3px solid black; font-size: 75px; font-family: "Geholiday"; text-align: Center; }
+
             @font-face
             {
                 font-family: "Geholiday";
