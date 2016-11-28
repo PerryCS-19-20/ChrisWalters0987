@@ -19,7 +19,7 @@
                     Cell.textContent = getLetter(Players);
                     Players = "O";
                     var GrabText = document.getElementById("PlayersTurn");
-                    var SetText = "Players Turn: O";
+                    var SetText = "Players Turn: <span id = 's1'>O</span>";
                     GrabText.textContent = (SetText);
 
                 }
@@ -28,7 +28,7 @@
                     Cell.textContent = getLetter(Players);
                     Players = "X";
                     var GrabText = document.getElementById("PlayersTurn");
-                    var SetText = "Players Turn: X";
+                    var SetText = "Players Turn: <span id = 's1'>X</span>";
                     GrabText.textContent = (SetText);
                 }
 
@@ -94,6 +94,8 @@
                 font-weight: normal;
                 font-style: normal;
             }
+				
+				.s1{ font-family: "Geholiday"; }
         </Style>
     </Head>
 
@@ -119,7 +121,7 @@
             </Tr>
         </Table>
         <Br>
-        <H2 style = "color: Red" ID = "PlayersTurn">Players Turn: X</H2>
+        <H2 style = "color: Red" ID = "PlayersTurn">Players Turn: <span id = "s1">X</span></H2>
         <Br><Hr>
     </Center>
 </Body>
