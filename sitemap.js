@@ -3,11 +3,7 @@ function buildMap(ID)
 	var Container = document.getElementById(ID);
 
 	var NewUL = document.createElement("UL");
-	Container.appendChild(NewUL);
-
-	var NewNewUL = document.createElement("UL");
-	NewUL.appendChild(NewNewUL);
-	
+	Container.appendChild(NewUL);	
 	NewUL.appendChild(makeList("index.html", "Home"));
 	NewUL.appendChild(makeList("bio.html", "Biography"));
 
@@ -15,6 +11,9 @@ function buildMap(ID)
 	NewLI.textContent = "School Projects:";
 	NewUL.appendChild(NewLI);
 
+	var NewNewUL = document.createElement("UL");
+	NewUL.appendChild(NewNewUL);
+	
 	NewNewUL.appendChild(makeList("Breakout.html", "Breakout!"));
 	NewNewUL.appendChild(makeList(".html", "JavaScript Events!"));
 	NewNewUL.appendChild(makeList("popup.html", "Pop-Up!"));
