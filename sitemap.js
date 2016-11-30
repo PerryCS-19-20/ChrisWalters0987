@@ -5,6 +5,9 @@ function buildMap(ID)
 	var NewUL = document.createElement("UL");
 	Container.appendChild(NewUL);
 
+	var NewNewUL = document.createElement("UL");
+	NewUL.appendChild(NewNewUL);
+	
 	NewUL.appendChild(makeList("index.html", "Home"));
 	NewUL.appendChild(makeList("bio.html", "Biography"));
 
@@ -12,14 +15,14 @@ function buildMap(ID)
 	NewLI.textContent = "School Projects:";
 	NewUL.appendChild(NewLI);
 
-	NewUL.appendChild(makeList("Breakout.html", "Breakout!"));
-	NewUL.appendChild(makeList(".html", "JavaScript Events!"));
-	NewUL.appendChild(makeList("popup.html", "Pop-Up!"));
-	NewUL.appendChild(makeList("todolist.html", "To Do List!"));
-	NewUL.appendChild(makeList("chalkbored.html", "Chalkbored!"));
-	NewUL.appendChild(makeList("tictactoe.html", "Tic-Tac-Toe!"));
-	NewUL.appendChild(makeList("FirstMultiplicationTable.html", "Multiplication!"));
-	NewUL.appendChild(makeList("BetterMutiTable.html", "More Multiplication!"));
+	NewNewUL.appendChild(makeList("Breakout.html", "Breakout!"));
+	NewNewUL.appendChild(makeList(".html", "JavaScript Events!"));
+	NewNewUL.appendChild(makeList("popup.html", "Pop-Up!"));
+	NewNewUL.appendChild(makeList("todolist.html", "To Do List!"));
+	NewNewUL.appendChild(makeList("chalkbored.html", "Chalkbored!"));
+	NewNewUL.appendChild(makeList("tictactoe.html", "Tic-Tac-Toe!"));
+	NewNewUL.appendChild(makeList("FirstMultiplicationTable.html", "Multiplication!"));
+	NewNewUL.appendChild(makeList("BetterMutiTable.html", "More Multiplication!"));
 }
 
 function makeList(Link, Text)
