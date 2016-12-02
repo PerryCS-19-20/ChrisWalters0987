@@ -22,6 +22,7 @@ function buildMap(ID)
 	NewNewUL.appendChild(makeList("tictactoe.html", "Tic-Tac-Toe!"));
 	NewNewUL.appendChild(makeList("FirstMultiplicationTable.html", "Multiplication!"));
 	NewNewUL.appendChild(makeList("BetterMutiTable.html", "More Multiplication!"));
+        NewNewUL.appendChild(makeList("Calculator.html", "Midpoint Calculation!"));
 }
 
 function makeList(Link, Text)
