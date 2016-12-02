@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+
+<HTML>
+    <Head>
+        <Title>Midpoint Calculation!</Title>
+        <link rel="stylesheet" type="text/css" href="WebsiteCSS.css">
+        <link rel="shortcut icon" type="image/png" href="favicon.png">
+
+        <Script>
+            function CalculateMidpoint() {
+                var X1 = parseFloat(document.getElementById("X1").value);
+                var Y1 = parseFloat(document.getElementById("Y1").value);
+                var X2 = parseFloat(document.getElementById("X2").value);
+                var Y2 = parseFloat(document.getElementById("Y2").value);
+                var EndCalculationNumberOne = ((X1 + X2) / 2);
+                var EndCalculationNumberTwo = ((Y1 + Y2) / 2);
+                var GrabTheSpan = document.getElementById("TheOneAndOnlySpan");
+                GrabTheSpan.innerHTML = "(" + EndCalculationNumberOne + ", " + EndCalculationNumberTwo + ")";
+            }
+        </Script>
+    </Head>
+
+    <Body>
+    <Center>
+        <H1>Midpoint Calculation</H1>
+        <H2>X1: <input type = "number" id = "X1"></H2> 
+        <H2>Y1: <input type = "number" id = "Y1"></H2> 
+        <H2>X2: <input type = "number" id = "X2"></H2> 
+        <H2>Y2: <input type = "number" id = "Y2"></H2> 
+        <Button onclick="CalculateMidpoint()">Find Midpoint!</Button>
+        <Br>
+        <Br>
+        <span id="TheOneAndOnlySpan"> </span>
+        <Br>
+        <H3>Midpoint Formula:</H3>
+        <H3>((X2 + X1) / 2, (Y2 + Y1) / 2))</H3>
+    </Center>
+</Body>
+</HTML>
