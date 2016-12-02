@@ -15,7 +15,14 @@
                 var EndCalculationNumberOne = ((X1 + X2) / 2);
                 var EndCalculationNumberTwo = ((Y1 + Y2) / 2);
                 var GrabTheSpan = document.getElementById("TheOneAndOnlySpan");
-                GrabTheSpan.innerHTML = "(" + EndCalculationNumberOne + ", " + EndCalculationNumberTwo + ")";
+                if (EndCalculationNumberOne == "NaN" || EndCalculationNumberTwo == "NaN")
+                {
+                    GrabTheSpan.innerHTML = "Error: Unknown Numbers?";
+                }
+                else
+                {
+                    GrabTheSpan.innerHTML = "(" + EndCalculationNumberOne + ", " + EndCalculationNumberTwo + ")";
+                }
             }
         </Script>
     </Head>
