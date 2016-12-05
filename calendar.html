@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" type="text/css" href="WebsiteCSS.css">
+        <link rel="shortcut icon" type="image/png" href="favicon.png">
+        <title>Calendar</title>
+        <script>
+            function makeCalendar() {
+                var newCalendar = document.getElementById("newCalendar");
+                if (newCalendar != null) {
+                    newCalendar.parentNode.removeChild(newCalendar);
+                }
+
+                newCalendar = document.createElement("table");
+                newCalendar.id = "newCalendar";
+
+                var body = document.body;
+                body.appendChild(newCalendar);
+
+                var NewTR = document.createElement("TR");
+                newCalendar.appendChild(NewTR);
+
+                for (C = 0; C != 7; C++)
+                {
+                    var NewTH = document.createElement("TH");
+                    NewTH.textContent = getDayName(C);
+                    NewTR.appendChild(NewTH);
+                }
+
+                var NewTD = document.createElement("TD");
+                newCalendar.appendChild(NewTD);
+
+                for (C = 1; C != 32; C++)
+                {
+                    if (C % 7 == 1)
+                    {
+                        NewTD = document.createElement("TD");
+                        newCalendar.appendChild(NewTD);
+                    }
+                    NewTD.textContent = C;
+                }
+            }
+
+            function getDayName(dayNum)
+            {
+                switch (dayNum)
+                {
+                    case 0:
+                        return "Sunday";
+
+                    case 1:
+                        return "Monday";
+
+                    case 2:
+                        return "Tuesday";
+
+                    case 3:
+                        return "Wednesday"
+
+                    case 4:
+                        return "Thursday";
+
+                    case 5:
+                        return "Friday";
+
+                    case 6:
+                        return "Saturday";
+                }
+            }
+        </script>
+
+        <Style>
+            table, td, th { border: solid 1px; }
+            td { text-align: right; }
+        </Style>
+    </head>
+    <body onload="makeCalendar();">
+    <Center>
+        <H1>Calendar!</H1>
+    </Center>
+</body>
+</html>
