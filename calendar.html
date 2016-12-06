@@ -124,7 +124,10 @@
 
             function ChangeMonth(Number)
             {
-                ValueToChangeByMonth += Number;
+				if(12 <= Month - (ValueToChangeByMonth + Number) >= 0)
+				{
+					ValueToChangeByMonth += Number;
+				}
                 makeCalendar();
             }
 
@@ -136,6 +139,7 @@
         </script>
 
         <Style>
+			body { text-align: center; }
             table, td, th { border: solid 1px; }
             td { text-align: center; }
         </Style>
