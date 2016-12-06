@@ -124,7 +124,7 @@
 
             function ChangeMonth(Number)
             {
-				if(12 <= Month - (ValueToChangeByMonth + Number) >= 0)
+				if(Month - (ValueToChangeByMonth + Number) >= 0 && 12 <= Month - (ValueToChangeByMonth + Number))
 				{
 					ValueToChangeByMonth += Number;
 				}
@@ -139,7 +139,6 @@
         </script>
 
         <Style>
-			body { text-align: center; }
             table, td, th { border: solid 1px; }
             td { text-align: center; }
         </Style>
