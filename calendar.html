@@ -124,7 +124,8 @@
 
             function ChangeMonth(Number)
             {
-				if((Month - (ValueToChangeByMonth + Number)) >= 0)
+				var x = Month - (ValueToChangeByMonth + Number)
+				if(0 =< x >= 11)
 				{
 					ValueToChangeByMonth += Number;
 				}
