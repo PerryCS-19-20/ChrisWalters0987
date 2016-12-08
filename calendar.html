@@ -124,11 +124,22 @@
 
             function ChangeMonth(Number)
             {
-				var x = Month + (ValueToChangeByMonth + Number);
-				if(0 <= x && x <= 11)
-				{
-					ValueToChangeByMonth += Number;
-				}
+                var x = Month + (ValueToChangeByMonth + Number);
+                if (0 <= x && x <= 11)
+                {
+                    ValueToChangeByMonth += Number;
+                } else if (x < 0)
+                {
+                    Month = 11;
+                    ValueToChangeByMonth = 0;
+                    ValueToChangeByYear--;
+                } else if (x > 11)
+                {
+                    Month = 0;
+                    ValueToChangeByMonth = 0;
+                    ValueToChangeByYear++;
+                }
+
                 makeCalendar();
             }
 
@@ -150,8 +161,8 @@
         <Button onclick="ChangeYear(-1)"><<</Button>
         <Button onclick="ChangeMonth(-1)"><</Button>
         <Button onclick="ChangeMonth(1)">></Button>
-		<Button onclick="ChangeYear(1)">>></Button>
-		<Br>
-		<H2 id = "newDate"></H2>
-	</body>
+        <Button onclick="ChangeYear(1)">>></Button>
+        <Br>
+        <H2 id = "newDate"></H2>
+    </body>
 </html>
