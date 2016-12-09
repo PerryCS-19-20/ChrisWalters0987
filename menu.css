@@ -1,0 +1,56 @@
+#MenuBar {
+    position: relative;
+    padding: 0px;
+    display: block;
+    background-color: #f2f2f2;
+}
+
+#MenuBar > ul {
+    position: relative;
+    display:  inline-block;
+    text-decoration: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#MenuBar > ul > li {
+    display: inline-block;
+    padding: 8px;
+}
+
+#MenuBar ul li {
+    list-style: none;
+    text-indent: 0px;
+}
+
+#MenuBar ul ul {
+    display: none;
+    position: absolute;
+    background-color: #e6e6e6;
+    padding: 0px;
+}
+
+#MenuBar ul li:hover ul,
+#MenuBar ul li:focus ul,
+#MenuBar ul li:active ul {
+    display: block;
+}
+
+#MenuBar a {
+    display: block;
+    color: black;
+    padding: 8px;
+    text-decoration: none;
+}
+
+#MenuBar a:hover {
+    background-color: #d9d9d9;
+    color: black;
+}
+
+/* Change the link color on hover */
+#MenuBar ul ul li a:hover {
+    background-color: #d9d9d9;
+    color: black;
+}
