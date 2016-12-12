@@ -5,6 +5,10 @@
         <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" type="text/css" href="WebsiteCSS.css">
         <link rel="shortcut icon" type="image/png" href="favicon.png">
+        <link rel="stylesheet" type="text/css" href="menu.css">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <script src="sitemap.js"></script>
         <title>Calendar</title>
         <script>
             var ValueToChangeByMonth = 0;
@@ -155,7 +159,9 @@
             td { text-align: center; }
         </Style>
     </head>
-    <body onload="makeCalendar();">
+    <body onload="makeCalendar();
+                buildMap('MenuBar');">
+        <div id="MenuBar"></div>
         <H1>Calendar!</H1>
         <Br>
         <Button onclick="ChangeYear(-1)"><<</Button>

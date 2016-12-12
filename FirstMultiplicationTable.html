@@ -5,6 +5,11 @@
         <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" type="text/css" href="WebsiteCSS.css">
         <link rel="shortcut icon" type="image/png" href="favicon.png">
+        <link rel="stylesheet" type="text/css" href="menu.css">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <script src="sitemap.js"></script>
+
         <title>Times Table</title>
         <style>
             table, td, th {
@@ -15,7 +20,9 @@
             }
         </style>
     </head>
-    <body onload="buildTimesTable()">
+    <body onload="buildTimesTable();
+            buildMap('MenuBar');">
+        <div id="MenuBar"></div>
         <script>
         function buildTimesTable() {
             // Create a table for the multiplication table

@@ -1,11 +1,14 @@
 <!DOCTYPE HTML>
 
 <HTML>
-	<Head>
-		<Title>This Is Not A Test!</Title>
+    <Head>
+        <Title>This Is Not A Test!</Title>
         <link rel="stylesheet" type="text/css" href="WebsiteCSS.css">
         <link rel="shortcut icon" type="image/png" href="favicon.png">
-		
+        <link rel="stylesheet" type="text/css" href="menu.css">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <script src="sitemap.js"></script>
         <Script>
             function testHTML()
             {
@@ -14,19 +17,20 @@
                 theSpan.innerHTML = userInput.value;
             }
         </Script>
-	</Head>
+    </Head>
 
-	<Body>
-        <Center>
-            <Hr>
-            <br>
-            <textarea rows="10" cols="80" id="inputText"> This is text! </textarea>
-            <Br><br>
-            <Button onclick="testHTML()">Test!</Button>
-            <Br><br>
-            <span id="s1"> </span>
-            <br>
-            <Hr>
-        </Center>
-	</Body>
+    <body onload="buildMap('MenuBar');">
+        <div id="MenuBar"></div>
+    <Center>
+        <Hr>
+        <br>
+        <textarea rows="10" cols="80" id="inputText"> This is text! </textarea>
+        <Br><br>
+        <Button onclick="testHTML()">Test!</Button>
+        <Br><br>
+        <span id="s1"> </span>
+        <br>
+        <Hr>
+    </Center>
+</Body>
 </HTML>

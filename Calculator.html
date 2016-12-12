@@ -5,7 +5,10 @@
         <Title>Midpoint Calculation!</Title>
         <link rel="stylesheet" type="text/css" href="WebsiteCSS.css">
         <link rel="shortcut icon" type="image/png" href="favicon.png">
-
+        <link rel="stylesheet" type="text/css" href="menu.css">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <script src="sitemap.js"></script>
         <Script>
             function CalculateMidpoint() {
                 var X1 = parseFloat(document.getElementById("X1").value);
@@ -27,7 +30,8 @@
         </Script>
     </Head>
 
-    <Body>
+    <Body onload="buildMap('MenuBar');">
+        <div id="MenuBar"></div>
     <Center>
         <H1>Midpoint Calculation</H1>
         <H2>X1: <input type = "number" id = "X1"></H2> 

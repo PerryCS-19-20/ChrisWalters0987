@@ -4,7 +4,10 @@
         <title>To Do List!</title>
         <link rel="stylesheet" type="text/css" href="WebsiteCSS.css">
         <link rel="shortcut icon" type="image/png" href="favicon.png">
-        
+        <link rel="stylesheet" type="text/css" href="menu.css">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <script src="sitemap.js"></script>
         <Script>
             function BUTTONCLICKED()
             {
@@ -16,20 +19,21 @@
             }
         </Script>
     </head>
-    <body>
-        <center>
-            <Hr><br><br>
-            <textarea rows="10" cols="80" id="inputText" > Enter Text Here: </textarea>
-            <br><br>
-            <Button onclick="BUTTONCLICKED()">This Is A Button!</Button>
-            <Br><br>
-            <span id="s1"> </span>
-            <br><br>
-            </Center>
-            <ul id="ThisList">
-            </ul>
-            </Center>
-            <br><br><hr>
-        </center>
-    </body>
+    <body onload="buildMap('MenuBar');">
+        <div id="MenuBar"></div>
+    <center>
+        <Hr><br><br>
+        <textarea rows="10" cols="80" id="inputText" > Enter Text Here: </textarea>
+        <br><br>
+        <Button onclick="BUTTONCLICKED()">This Is A Button!</Button>
+        <Br><br>
+        <span id="s1"> </span>
+        <br><br>
+    </Center>
+    <ul id="ThisList">
+    </ul>
+</Center>
+<br><br><hr>
+</center>
+</body>
 </html>

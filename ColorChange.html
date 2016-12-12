@@ -1,28 +1,37 @@
 <!DOCTYPE HTML>
 
 <HTML>
-	<Head>
-		<Title> Color Changing! </Title>
-		<link rel="stylesheet" type="text/css" href="WebsiteCSS.css">
-		<link rel="shortcut icon" type="image/png" href="favicon.png">
-		<Script>
-			function ChangeColor(colorName) { document.body.style.backgroundColor = colorName; }
-			function ChangeColorText(colorName) { document.body.style.color = colorName; }
-		</Script>
-	</Head>
-	
-	<Body>
-		<Center>
-			<Hr>
-			<H1> Color Changing </H1>
-			<P>
-			Background Color: <Br>
-			<span onclick="ChangeColor('red')">Red </span><span onclick="ChangeColor('green')">Green </span><span onclick="ChangeColor('blue')">Blue </span><span onclick="ChangeColor('black')">Black </span><span onclick="ChangeColor('white')">White </span><Br>
-			<Br>
-			Text Color:<Br>
-			<span onclick="ChangeColorText('red')">Red </span> <span onclick="ChangeColorText('green')">Green </span><span onclick="ChangeColorText('blue')">Blue </span><span onclick="ChangeColorText('black')">Black </span><span onclick="ChangeColorText('white')">White </span><Br>
-			</P>
-			<Hr>
-		</Center>
-	</Body>
+    <Head>
+        <Title> Color Changing! </Title>
+        <link rel="stylesheet" type="text/css" href="WebsiteCSS.css">
+        <link rel="shortcut icon" type="image/png" href="favicon.png">
+        <link rel="stylesheet" type="text/css" href="menu.css">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <script src="sitemap.js"></script>
+        <Script>
+            function ChangeColor(colorName) {
+                document.body.style.backgroundColor = colorName;
+            }
+            function ChangeColorText(colorName) {
+                document.body.style.color = colorName;
+            }
+        </Script>
+    </Head>
+
+    <Body onload="buildMap('MenuBar');">
+        <div id="MenuBar"></div>
+    <Center>
+        <Hr>
+        <H1> Color Changing </H1>
+        <P>
+            Background Color: <Br>
+            <span onclick="ChangeColor('red')">Red </span><span onclick="ChangeColor('green')">Green </span><span onclick="ChangeColor('blue')">Blue </span><span onclick="ChangeColor('black')">Black </span><span onclick="ChangeColor('white')">White </span><Br>
+            <Br>
+            Text Color:<Br>
+            <span onclick="ChangeColorText('red')">Red </span> <span onclick="ChangeColorText('green')">Green </span><span onclick="ChangeColorText('blue')">Blue </span><span onclick="ChangeColorText('black')">Black </span><span onclick="ChangeColorText('white')">White </span><Br>
+        </P>
+        <Hr>
+    </Center>
+</Body>
 </HTML>

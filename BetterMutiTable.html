@@ -3,8 +3,12 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" type="text/css" href="menu.css">
         <link rel="stylesheet" type="text/css" href="WebsiteCSS.css">
         <link rel="shortcut icon" type="image/png" href="favicon.png">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <script src="sitemap.js"></script>
         <title>Times Table</title>
         <style>
             table, td, th {
@@ -15,7 +19,8 @@
             }
         </style>
     </head>
-    <body onload="buildTimesTable()">
+    <body onload="buildTimesTable(); buildMap('MenuBar');">
+        <div id="MenuBar"></div>
         <h1>Multiplication Table</h1>
         Table Width:<input type="range" id="tableWidth" min="6" max="101" value="10" onchange ="buildTimesTable();"><br>
         Table Height:<input type="range" id="tableHeight" min="6" max="101" value="10" onchange ="buildTimesTable();"><br>
