@@ -1,13 +1,11 @@
-<!DOCTYPE html>
-<html>
-    <head>
+<!DOCTYPE HTML>
+
+<HTML>
+    <Head>
         <title>To Do List!</title>
         <link rel="stylesheet" type="text/css" href="WebsiteCSS.css">
         <link rel="shortcut icon" type="image/png" href="favicon.png">
-        <link rel="stylesheet" type="text/css" href="menu.css">
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width">
-        <script src="sitemap.js"></script>
+        <!--No Site Map -->
         <Script>
             function BUTTONCLICKED()
             {
@@ -18,22 +16,18 @@
                 newLI.appendChild(newText);
             }
         </Script>
-    </head>
-    <body onload="buildMap('MenuBar');">
-        <div id="MenuBar"></div>
-    <center>
-        <Hr><br><br>
+    </Head>
+
+    <Body>
+    <Center>
+        <Br><Br>
         <textarea rows="10" cols="80" id="inputText" > Enter Text Here: </textarea>
-        <br><br>
+        <Br><Br>
         <Button onclick="BUTTONCLICKED()">This Is A Button!</Button>
-        <Br><br>
+        <Br><Br>
         <span id="s1"> </span>
-        <br><br>
+        <Br><Br>
     </Center>
-    <ul id="ThisList">
-    </ul>
-</Center>
-<br><br><hr>
-</center>
-</body>
-</html>
+    <ul id="ThisList"></ul>
+</Body>
+</HTML>
