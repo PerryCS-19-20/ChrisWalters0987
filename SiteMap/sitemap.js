@@ -4,8 +4,8 @@ function buildMap(ID)
 
     var NewUL = document.createElement("UL");
     Container.appendChild(NewUL);
-    NewUL.appendChild(makeList("../Index.html", "Home"));
-    NewUL.appendChild(makeList("../Bio/bio.html", "Biography"));
+    NewUL.appendChild(makeList("https://perryma.tk/ChrisWalters0987/index.html", "Home"));
+    NewUL.appendChild(makeList("https://perryma.tk/ChrisWalters0987/Bio/bio.html", "Biography"));
 
     var NewLI = document.createElement("LI");
     NewLI.textContent = "School Projects:";
@@ -14,15 +14,15 @@ function buildMap(ID)
     var NewNewUL = document.createElement("UL");
     NewLI.appendChild(NewNewUL);
 
-    NewNewUL.appendChild(makeList("../Breakout.html", "Breakout!"));
-    NewNewUL.appendChild(makeList(".html", "JavaScript Events!"));
-    NewNewUL.appendChild(makeList("../popup.html", "Pop-Up!"));
-    NewNewUL.appendChild(makeList("../todolist.html", "To Do List!"));
-    NewNewUL.appendChild(makeList("../chalkbored.html", "Chalkbored!"));
-    NewNewUL.appendChild(makeList("../tictactoe/tictactoe.html", "Tic-Tac-Toe!"));
-    NewNewUL.appendChild(makeList("../FirstMultiplicationTable.html", "Multiplication!"));
-    NewNewUL.appendChild(makeList("../BetterMutiTable.html", "More Multiplication!"));
-    NewNewUL.appendChild(makeList("../Calculator/Calculator.html", "Midpoint Calculation!"));
+    NewNewUL.appendChild(makeList("https://perryma.tk/ChrisWalters0987/Breakout.html", "Breakout!"));
+    //NewNewUL.appendChild(makeList(".html", "JavaScript Events!"));
+    NewNewUL.appendChild(makeList("https://perryma.tk/ChrisWalters0987/popup.html", "Pop-Up!"));
+    NewNewUL.appendChild(makeList("https://perryma.tk/ChrisWalters0987/todolist.html", "To Do List!"));
+    NewNewUL.appendChild(makeList("https://perryma.tk/ChrisWalters0987/chalkbored.html", "Chalkbored!"));
+    NewNewUL.appendChild(makeList("https://perryma.tk/ChrisWalters0987/tictactoe/tictactoe.html", "Tic-Tac-Toe!"));
+    NewNewUL.appendChild(makeList("https://perryma.tk/ChrisWalters0987/FirstMultiplicationTable.html", "Multiplication!"));
+    NewNewUL.appendChild(makeList("https://perryma.tk/ChrisWalters0987/BetterMutiTable.html", "More Multiplication!"));
+    NewNewUL.appendChild(makeList("https://perryma.tk/ChrisWalters0987/Calculator/Calculator.html", "Midpoint Calculation!"));
 }
 
 function makeList(Link, Text)
