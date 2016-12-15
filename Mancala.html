@@ -16,10 +16,17 @@
         timesTable.id = "timesTable";
 				var body = document.body;
         body.appendChild(timesTable);
-        var NewTR = document.createElement("TR");
-        timesTable.appendChild(NewTR);
-        NewTR.textContent = "0";
-        NewTR.textContent = "0";
+        
+        for(i = 0; i != 2; i++){
+          var NewTR = document.createElement("TR");
+          timesTable.appendChild(NewTR);
+          for(C = 0; C != 8; C++)
+          {
+            var NewTD = document.createElement("TD");
+            NewTD.textContent = 0;
+            NewTR.appendChild(NewTD);
+          }
+        }
 			}
 		</Script>
 	</Head>
