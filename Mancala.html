@@ -16,6 +16,7 @@
 		<Script>
       function MakeBored()
 			{
+        var FirstLoop = true;
 				var timesTable = document.createElement("table");
         timesTable.id = "timesTable";
 				var body = document.body;
@@ -26,9 +27,10 @@
           timesTable.appendChild(NewTR);
           for(C = 0; C != 8; C++)
           {
-            if(i == 1)
+            if(FirstLoop)
             {
               C += 2;
+              FirstLoop == false;
             }
             var NewTD = document.createElement("TD");
             NewTD.textContent = 0;
