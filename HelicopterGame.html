@@ -58,7 +58,7 @@
             function addDust() {
                 var d = new Circle(DUST_RADIUS);
                 d.setPosition(copter.getX() - d.getWidth(), copter.getY() + DUST_BUFFER);
-                d.setColor("#cccccc");
+                d.setColor("#202020");
                 dust.push(d);
                 add(d);
             }
@@ -73,14 +73,14 @@
                     var height = Randomizer.nextInt(MIN_TERRAIN_HEIGHT, MAX_TERRAIN_HEIGHT);
                     var terrain = new Rectangle(TERRAIN_WIDTH, height);
                     terrain.setPosition(TERRAIN_WIDTH * i, 0);
-                    terrain.setColor("#1c1c1c");
+                    terrain.setColor("#202020");
                     top_Terrain.push(terrain);
                     add(terrain);
 
                     height = Randomizer.nextInt(MIN_TERRAIN_HEIGHT, MAX_TERRAIN_HEIGHT);
                     var bottomTerrain = new Rectangle(TERRAIN_WIDTH, height);
                     bottomTerrain.setPosition(TERRAIN_WIDTH * i, getHeight() - bottomTerrain.getHeight());
-                    bottomTerrain.setColor("#1c1c1c");
+                    bottomTerrain.setColor("#202020");
                     bottom_Terrain.push(bottomTerrain);
                     add(bottomTerrain);
                 }
@@ -132,7 +132,7 @@
             }
 
             function setup() {
-                var myGray = new Color(249, 249, 249);
+                var myGray = new Color(230, 230, 230);
                 setBackgroundColor(myGray);
                 copter = new WebImage(ImageLibrary.Objects.helicopter);
                 copter.setSize(50, 25)
