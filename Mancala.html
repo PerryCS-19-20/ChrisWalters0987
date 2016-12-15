@@ -26,6 +26,10 @@
           timesTable.appendChild(NewTR);
           for(C = 0; C != 8; C++)
           {
+            if(i == 1)
+            {
+              C += 2;
+            }
             var NewTD = document.createElement("TD");
             NewTD.textContent = 0;
             NewTR.appendChild(NewTD);
