@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+
+<HTML>
+    <Head>
+        <Title>Chalk Bored!</Title>
+        <link rel="stylesheet" type="text/css" href="WebsiteCSS.css">
+        <link rel="shortcut icon" type="image/png" href="favicon.png">
+        <!-- No Site Map -->
+        <Script>
+            function BUTTONCLICKED()
+            {
+                var AddLI;
+                var userText = document.getElementById("inputText");
+
+                for (var C = 0; C != 100; C++)
+                {
+                    AddLI = document.createElement("LI");
+                    AddLI.textContent = "I will not " + userText.value;
+                    document.getElementById("ThisList").appendChild(AddLI);
+                }
+            }
+        </Script>
+    </Head>
+
+    <Body>
+    <Center>
+        <Br><Br>
+        <TextArea rows = "10" cols = "50" id = "inputText">Enter Text Here:</TextArea>
+	<Br><Br>
+	<Button onclick = "BUTTONCLICKED()">This Is A Button!</Button>
+	<Br><Br>
+	<Span id = "s1"></Span>
+	<Br><Br>
+    </Center>
+    <OL id = "ThisList"></OL>
+    </Body>
+</HTML>

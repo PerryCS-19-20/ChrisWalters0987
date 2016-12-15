@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+
+<HTML>
+    <Head>
+        <title>Times Table</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="WebsiteCSS.css">
+        <link rel="shortcut icon" type="image/png" href="favicon.png">
+        <meta name="viewport" content="width=device-width">
+        <Style>
+            table, td, th { border: solid 1px; }
+            td { text-align: right; }
+        </Style>
+    </Head>
+
+    <Body onload ="buildTimesTable();">
+        <H1>Multiplication Table</H1>
+        Table Width:<input type="range" id="tableWidth" min="6" max="101" value="10" onchange ="buildTimesTable();"><br>
+        Table Height:<input type="range" id="tableHeight" min="6" max="101" value="10" onchange ="buildTimesTable();"><br>
+        <Br>
+        <Script>
+        function buildTimesTable() {
+            var timesTable = document.getElementById("timesTable");
+            if (timesTable != null) {
+                timesTable.parentNode.removeChild(timesTable);
+            }
+
+            timesTable = document.createElement("table");
+            timesTable.id = "timesTable";
+
+            var body = document.body;
+            body.appendChild(timesTable);
+
+            var width = document.getElementById("tableWidth").value;
+            var height = document.getElementById("tableHeight").value;
+
+            for (C = 0; C != height; C++)
+            {
+                var NewTR = document.createElement("TR");
+                timesTable.appendChild(NewTR);
+
+                for (i = 0; i != width; i++)
+                {
+                    if (C == 0)
+                    {
+                        var NewTH = document.createElement("TH");
+                        NewTH.textContent = i;
+                        NewTR.appendChild(NewTH);
+                    }
+                    else if (i == 0)
+                    {
+                        var NewTH = document.createElement("TH");
+                        NewTH.textContent = C;
+                        NewTR.appendChild(NewTH);
+                    }
+                    else
+                    {
+                        var NewTD = document.createElement("TD");
+                        NewTD.textContent = i * C;
+                        NewTR.appendChild(NewTD);
+                    }
+                }
+            }
+        }
+        </Script>
+    </Body>
+</HTML>

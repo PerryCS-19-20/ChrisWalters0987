@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+
+<HTML>
+    <Head>
+        <Title>This Is Not A Test!</Title>
+        <link rel="stylesheet" type="text/css" href="WebsiteCSS.css">
+        <link rel="shortcut icon" type="image/png" href="favicon.png">
+        <!-- This Page Will Be Removed! -->
+        <Script>
+            function testHTML()
+            {
+                var userInput = document.getElementById("inputText");
+                var theSpan = document.getElementById("s1");
+                theSpan.innerHTML = userInput.value;
+            }
+        </Script>
+    </Head>
+
+    <Body>
+    <Center>
+        <Br>
+        <Textarea rows="10" cols="80" id="inputText"> This is text! </Textarea>
+	<Br><Br>
+	<Button onclick="testHTML()">Test!</Button>
+	<Br><Br>
+	<span id="s1"> </span>
+    </Center>
+    </Body>
+</HTML>
