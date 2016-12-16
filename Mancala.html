@@ -1,50 +1,87 @@
 <!DOCTYPE HTML>
 
 <HTML>
-  <Head>
-    <Title>Mancale!</Title>
-		<link rel="stylesheet" type="text/css" href="Menu/menu.css">
-		<link rel="shortcut icon" type="image/png" href="favicon.png">
-		<link rel="stylesheet" type="text/css" href="WebsiteCSS.css">
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width">
-    <Style>
-      table, td, th { border: solid 1px; }
-      td { text-align: right; }
-    </Style>
-		<script src="SiteMap/sitemap.js"></script>
-		<Script>
-      function MakeBored()
-			{
-        var FirstLoop = true;
-				var timesTable = document.createElement("table");
-        timesTable.id = "timesTable";
-				var body = document.body;
-        body.appendChild(timesTable);
-        
-        for(i = 0; i != 2; i++){
-          var NewTR = document.createElement("TR");
-          timesTable.appendChild(NewTR);
-          for(C = 0; C != 8; C++)
-          {
-            if(FirstLoop)
+    <Head>
+        <Title>Mancala!</Title>
+        <link rel="stylesheet" type="text/css" href="Menu/menu.css">
+        <link rel="shortcut icon" type="image/png" href="favicon.png">
+        <link rel="stylesheet" type="text/css" href="WebsiteCSS.css">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <Style>
+            table, td, th { border: solid 1px; width: 400px; height: 100px}
+            td { text-align: center; }
+        </Style>
+        <script src="SiteMap/sitemap.js"></script>
+        <Script>
+            var PlayersTurn = "Top";
+            function MakeBored()
             {
-              C += 2;
-              FirstLoop = false;
-            }
-            var NewTD = document.createElement("TD");
-            NewTD.textContent = 0;
-            NewTR.appendChild(NewTD);
-          }
-        }
-			}
-		</Script>
-	</Head>
+                var ThisIsANumber = 0;
+                var MancalaTable = document.createElement("table");
+                MancalaTable.id = "MancalaTable";
 
-	<Body onload="buildMap('MenuBar'); MakeBored()">
-		<div id="MenuBar"></div>
-		<Center>
-			<H1>Mancala!</H1>
-		</Center>
-	</Body>
+                var body = document.body;
+                body.appendChild(MancalaTable);
+
+                for (i = 0; i != 2; i++) {
+                    var NewTR = document.createElement("TR");
+                    MancalaTable.appendChild(NewTR);
+                    for (C = 0; C != 8; C++)
+                    {
+                        ThisIsANumber += 1;
+                        if ((i == 0) && (C == 0 || C == 7))
+                        {
+                            var NewTD = document.createElement("TD");
+                            NewTD.rowSpan = 2;
+                            NewTD.id = "IDNumber" + ThisIsANumber;
+                            NewTD.addEventListener("click", function() {OnClick(this.id)});
+                            NewTD.textContent = 1;
+                            NewTR.appendChild(NewTD);
+                        } else if ((i == 1) && (C == 0 || C == 7))
+                        {
+                            //Do NOTHING!!!
+                        } else
+                        {
+                            var NewTD = document.createElement("TD");
+                            NewTD.textContent = Math.round(Math.random() * 4 + 1);
+                            NewTD.id = "IDNumber" + ThisIsANumber;
+                            NewTD.addEventListener("click", function() {OnClick(this.id)});
+                            NewTR.appendChild(NewTD);
+                        }
+                    }
+                }
+            }
+
+            function OnClick(MrID) {
+                var NumbersOnID = CheckNumbers(MrID);
+                var SetToZero = document.getElementById(MrID);
+                SetToZero.textContent = "0";
+                if (PlayersTurn == "Top") {
+                    for (G = 0; G != NumbersOnID; G++)
+                    {
+                        
+                    }
+                } else if (PlayersTurn == "Bottom") {
+                    for (G = 0; G != NumbersOnID; G++)
+                    {
+
+                    }
+                }
+            }
+
+            function CheckNumbers(MrID) {
+                var IDNumber = document.getElementById(MrID);
+                return IDNumber;
+            }
+        </Script>
+    </Head>
+
+    <Body onload="buildMap('MenuBar');
+                MakeBored()">
+        <div id="MenuBar"></div>
+    <Center>
+        <H1>Mancala!</H1>
+    </Center>
+</Body>
 </HTML>
