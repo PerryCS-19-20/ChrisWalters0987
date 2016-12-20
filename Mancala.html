@@ -89,8 +89,9 @@
 						for(C = 1; C != NumbersOnID; C++)
 						{
 							var NextID = document.getElementById(BottomArray[IDInArray + C]);
-							var OldValue = NextID.textContent + 1;
-							NextID.textContent =  OldValue;
+							var OldValue = NextID.textContent;
+							var NewValue = OldValue++;
+							NextID.textContent =  NewValue;
 						}
 					}
 				}
