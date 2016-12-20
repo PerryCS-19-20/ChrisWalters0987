@@ -99,11 +99,11 @@
 				
 			function CheckNumbers(MrID) {
 				var IDNumber = document.getElementById(MrID);
-				return IDNumber;
+				return IDNumber.textContent;
 			}
 		</Script>
 	</Head>
-	<Body onload="buildMap('MenuBar'); MakeBored()">
+	<Body onload="buildMap('MenuBar'); MakeBored(); RandomPersonFirst();">
 		<div id="MenuBar"></div>
 		<Center>
 			<H1>Mancala!</H1>
