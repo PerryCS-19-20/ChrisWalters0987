@@ -86,10 +86,10 @@
 						}
 					} else if (PlayersTurn == "Bottom") { // --> \\
 						var IDInArray = BottomArray.indexOf(MrID);
-						for(C = 0; C != NumbersOnID; C++)
+						for(C = 1; C != NumbersOnID; C++)
 						{
-							var NextID = BottomArray[IDInArray + C];
-							var OldValue = document.getElementById(NextID);
+							var NextID = document.getElementById(BottomArray[IDInArray + C]);
+							var OldValue = NextID.textContent;
 							var NewValue = OldValue++;
 							OldValue.textContent =  NewValue;
 						}
