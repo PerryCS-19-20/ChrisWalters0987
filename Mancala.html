@@ -1,110 +1,104 @@
 <!DOCTYPE HTML>
 <HTML>
-  <Head>
-    <Title>Mancala!</Title>
-    <link rel="stylesheet" type="text/css" href="Menu/menu.css">
-    <link rel="shortcut icon" type="image/png" href="favicon.png">
-    <link rel="stylesheet" type="text/css" href="WebsiteCSS.css">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <Style>
-      table, td, th { border: solid 1px; width: 400px; height: 100px}
-      td { text-align: center; }
-    </Style>
-    <script src="SiteMap/sitemap.js"></script>
-    <Script>
-      var PlayersTurn = "Top";
-      
-      function RandomPersonFirst()
-      {
-      	var GrabH2 = document.getElementById("WhosTurn");
-      	var PlayerTopIsFirst = Math.round(Math.random());
-      	if(PlayerTopIsFirst == 1)
-      	{
-      		PlayersTurn = "Top";
-      		GrabH2.InnerHTML = "Top Player Goes First";
-      	}
-      	else
-      	{
-      		PlayersTurn = "Bottom";
-      		GrabH2.InnerHTML = "Bottom Player Goes First";
-      	}
-      }
-      
-      function MakeBored()
-      {
-          var ThisIsANumber = 0;
-          var MancalaTable = document.createElement("table");
-          MancalaTable.id = "MancalaTable";
-      
-          var body = document.body;
-          body.appendChild(MancalaTable);
-      
-          for (i = 0; i != 2; i++) {
-              var NewTR = document.createElement("TR");
-              MancalaTable.appendChild(NewTR);
-              for (C = 0; C != 8; C++)
-              {
-                  ThisIsANumber += 1;
-                  if ((i == 0) && (C == 0 || C == 7))
-                  {
-                      var NewTD = document.createElement("TD");
-                      NewTD.rowSpan = 2;
-                      NewTD.id = "IDNumber" + ThisIsANumber;
-                      NewTD.addEventListener("click", function() {OnClick(this.id)});
-                      NewTD.textContent = 3;
-                      NewTR.appendChild(NewTD);
-                  } else if ((i == 1) && (C == 0 || C == 7))
-                  {
-                      //Do NOTHING!!!
-                  } else
-                  {
-                      var NewTD = document.createElement("TD");
-                      NewTD.textContent = Math.round(Math.random() * 4 + 1);
-                      NewTD.id = "IDNumber" + ThisIsANumber;
-                      NewTD.addEventListener("click", function() {OnClick(this.id)});
-                      NewTR.appendChild(NewTD);
-                  }
-              }
-          }
-      }
-      
-      function OnClick(MrID) {
-          var NumbersOnID = CheckNumbers(MrID);
-          var IDGiven = document.getElementById(MrID);
-      	if(IDGiven == "IDNumber1" || IDGiven == "IDNumber8")
-      	{
-      	//DO NOTHING!
-      	}
-      	else
-      	{
-      	IDGiven.textContent = "0";
-      	}
-      
-          if (PlayersTurn == "Top") {
-              //for (G = 0; G != NumbersOnID; G++)
-              //{
-                  
-              //}
-          } else if (PlayersTurn == "Bottom") {
-              //for (G = 0; G != NumbersOnID; G++)
-              //{
-      
-              //}
-          }
-      }
-      
-      function CheckNumbers(MrID) {
-          var IDNumber = document.getElementById(MrID);
-          return IDNumber;
-      }
-    </Script>
-  </Head>
-  <Body onload="buildMap('MenuBar'); MakeBored()">
-    <div id="MenuBar"></div>
-    <Center>
-      <H1>Mancala!</H1>
-    </Center>
-    <H2 id = "WhosTurn"></H2>
-  </Body>
+	<Head>
+		<Title>Mancala!</Title>
+		<link rel="stylesheet" type="text/css" href="Menu/menu.css">
+		<link rel="shortcut icon" type="image/png" href="favicon.png">
+		<link rel="stylesheet" type="text/css" href="WebsiteCSS.css">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<Style>
+			table, td, th { border: solid 1px; width: 400px; height: 100px}
+			td { text-align: center; }
+		</Style>
+		<script src="SiteMap/sitemap.js"></script>
+		<Script>
+			var PlayersTurn = "Top";
+				
+			function RandomPersonFirst()
+			{
+				var GrabH2 = document.getElementById("WhosTurn");
+				var PlayerTopIsFirst = Math.round(Math.random());
+				if(PlayerTopIsFirst == 1)
+				{
+					PlayersTurn = "Top";
+					GrabH2.InnerHTML = "Top Player Goes First";
+				}
+				else
+				{
+					PlayersTurn = "Bottom";
+					GrabH2.InnerHTML = "Bottom Player Goes First";
+				}
+			}
+				
+			function MakeBored()
+			{
+				var ThisIsANumber = 0;
+				var MancalaTable = document.createElement("table");
+				MancalaTable.id = "MancalaTable";
+				
+				var body = document.body;
+				body.appendChild(MancalaTable);
+				
+				for (i = 0; i != 2; i++) {
+					var NewTR = document.createElement("TR");
+					MancalaTable.appendChild(NewTR);
+					for (C = 0; C != 8; C++)
+					{
+						ThisIsANumber += 1;
+						if ((i == 0) && (C == 0 || C == 7))
+						{
+							var NewTD = document.createElement("TD");
+							NewTD.rowSpan = 2;
+							NewTD.id = "IDNumber" + ThisIsANumber;
+							NewTD.addEventListener("click", function() {OnClick(this.id)});
+							NewTD.textContent = 0;
+							NewTR.appendChild(NewTD);
+						} else if ((i == 1) && (C == 0 || C == 7))
+						{
+							//Do NOTHING!!!
+						} else
+						{
+							var NewTD = document.createElement("TD");
+							NewTD.textContent = Math.round(Math.random() * 4 + 1);
+							NewTD.id = "IDNumber" + ThisIsANumber;
+							NewTD.addEventListener("click", function() {OnClick(this.id)});
+							NewTR.appendChild(NewTD);
+						}
+					}
+				}
+			}
+				
+			function OnClick(MrID) {
+				var NumbersOnID = CheckNumbers(MrID);
+				var IDGiven = document.getElementById(MrID);
+				if(MrID == "IDNumber1" || MrID == "IDNumber8")
+				{
+					//DO NOTHING!
+				}
+				else
+				{
+					IDGiven.textContent = "0";
+				}
+				
+				if (PlayersTurn == "Top") {
+				
+				} else if (PlayersTurn == "Bottom") {
+
+				}
+			}
+				
+			function CheckNumbers(MrID) {
+				var IDNumber = document.getElementById(MrID);
+				return IDNumber;
+			}
+		</Script>
+	</Head>
+	<Body onload="buildMap('MenuBar'); MakeBored()">
+		<div id="MenuBar"></div>
+		<Center>
+			<H1>Mancala!</H1>
+		</Center>
+		<H2 id = "WhosTurn"></H2>
+	</Body>
 </HTML>
