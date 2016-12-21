@@ -86,7 +86,7 @@
 						}
 					} else if (PlayersTurn == "Bottom") { // --> \\
 						var IDInArray = BottomArray.indexOf(MrID);
-						for(C = 1; C != NumbersOnID; C++)
+						for(C = 1; C <= NumbersOnID; C++)
 						{
 							var NextID = document.getElementById(BottomArray[IDInArray + C]);
 							var OldValue = Number(NextID.textContent);
