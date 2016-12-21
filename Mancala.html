@@ -78,7 +78,7 @@
 				var NumbersOnID = CheckNumbers(MrID);
 				var IDGiven = document.getElementById(MrID);
 				var ChangeTurnInHTML = document.getElementById("WhosTurn");
-				if(MrID != "IDNumber1" && MrID != "IDNumber8")
+				if(MrID != "IDNumber1" && MrID != "IDNumber8" && NumbersOnID != 0)
 				{
 					if (PlayersTurn == "Top" && TopArray.indexOf(MrID) <= 5) { // <-- \\
 						IDGiven.textContent = "0";
@@ -120,6 +120,7 @@
 							ChangeTurnInHTML.textContent = "Players Turn: " + PlayersTurn;
 						}
 					}
+					CheckIfWon();
 				}
 			}
 				
@@ -128,7 +129,34 @@
 			}
 			
 			function CheckIfWon(){
-			
+				var AllIDs = ["IDNumber2", "IDNumber3", "IDNumber4", "IDNumber5", "IDNumber6", "IDNumber7", "IDNumber10", "IDNumber11", "IDNumber12", "IDNumber13", "IDNumber14", "IDNumber15"]
+				var KeepTrackOfEverything = [];
+				var NumberItAddsUpTo = 0;
+				for(C = 0; C < AllIDs.length; C++)
+				{
+					var GetIDs = document.getElementById(AllIDs[C]);
+					var GetContent = GetIDs.textContent;
+					KeepTrackOfEverything.push(GetContent);
+					NumberItAddsUpTo += Number(GetContent);
+				}
+				
+				if(NumberItAddsUpTo == 0)
+				{
+					var TopCount = Number(document.getElementById("IDNumber1").textContent);
+					var BottomCount = Number(document.getElementById("IDNumber1").textContent);
+					if(TopCount > BottomCount)
+					{
+						WhoWins("Top");
+					}
+					else if(TopCount < BottomCount)
+					{
+						WhoWins("Bottom");
+					}
+					else if(TopCount == BottomCount)
+					{
+						WhoWins("No one");
+					}
+				}
 			}
 				
 			function CheckNumbers(MrID) {
