@@ -90,7 +90,9 @@
 							NextID.textContent =  OldValue + 1;
 						}
 						
-						if(TopArray[IDInArray + NumbersOnID - 1] == "IDNumber1")
+						var TEST = TopArray[IDInArray + NumbersOnID];
+						
+						if(TopArray[IDInArray + NumbersOnID] == "IDNumber1")
 						{
 							ChangeTurnInHTML.textContent = "Players Turn: " + PlayersTurn + ", AGAIN!";
 						}
@@ -110,7 +112,7 @@
 							NextID.textContent =  OldValue + 1;
 						}
 						
-						if(BottomArray[IDInArray + NumbersOnID - 1] == "IDNumber8")
+						if(BottomArray[IDInArray + NumbersOnID] == "IDNumber8")
 						{
 							ChangeTurnInHTML.textContent = "Players Turn: " + PlayersTurn + ", AGAIN!";
 						}
