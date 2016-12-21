@@ -97,6 +97,7 @@
 						else
 						{
 							PlayersTurn = "Bottom";
+							ChangeTurnInHTML.textContent = "Players Turn: " + PlayersTurn;
 						}
 						
 					} else if (PlayersTurn == "Bottom" && BottomArray.indexOf(MrID) <= 5) { // --> \\
@@ -116,6 +117,7 @@
 						else
 						{
 							PlayersTurn = "Top";
+							ChangeTurnInHTML.textContent = "Players Turn: " + PlayersTurn;
 						}
 					}
 				}
