@@ -106,7 +106,7 @@
 					} else if (PlayersTurn == "Bottom" && BottomArray.indexOf(MrID) <= 5) { // --> \\
 						IDGiven.textContent = "0";
 						var IDInArray = BottomArray.indexOf(MrID);
-						LastID = TopArray[IDInArray + NumbersOnID];
+						LastID = BottomArray[IDInArray + NumbersOnID];
 						for(C = 1; C <= NumbersOnID; C++)
 						{
 							var NextID = document.getElementById(BottomArray[IDInArray + C]);
