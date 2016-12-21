@@ -89,7 +89,15 @@
 							var OldValue = Number(NextID.textContent);
 							NextID.textContent =  OldValue + 1;
 						}
-						PlayersTurn = "Bottom";
+						
+						if(TopArray[IDInArray + NumbersOnID] == "IDNumber1")
+						{
+							ChangeTurnInHTML.textContent = "Players Turn: " + PlayersTurn + ", AGAIN!";
+						}
+						else
+						{
+							PlayersTurn = "Bottom";
+						}
 						
 					} else if (PlayersTurn == "Bottom" && BottomArray.indexOf(MrID) <= 5) { // --> \\
 						IDGiven.textContent = "0";
@@ -100,10 +108,25 @@
 							var OldValue = Number(NextID.textContent);
 							NextID.textContent =  OldValue + 1;
 						}
-						PlayersTurn = "Top";
+						
+						if(BottomArray[IDInArray + NumbersOnID] == "IDNumber8")
+						{
+							ChangeTurnInHTML.textContent = "Players Turn: " + PlayersTurn + ", AGAIN!";
+						}
+						else
+						{
+							PlayersTurn = "Top";
+						}
 					}
-					ChangeTurnInHTML.textContent = "Players Turn: " + PlayersTurn;
 				}
+			}
+				
+			function CheckCapture(){
+			
+			}
+			
+			function CheckIfWon(){
+			
 			}
 				
 			function CheckNumbers(MrID) {
