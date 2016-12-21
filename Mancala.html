@@ -139,21 +139,27 @@
 					{
 						var OppositeID = BottomSide[TopSide.indexOf(ID)];
 						var IDOldNumber = Number(document.getElementById(OppositeID).textContent);
-						document.getElementById(OppositeID).textContent = 0;
-						var IDNumber = Number(document.getElementById(ID).textContent);
-						document.getElementById(ID).textContent = 0;
-						var HomeNumber = Number(document.getElementById("IDNumber1").textContent);
-						document.getElementById("IDNumber1").textContent = Number(document.getElementById("IDNumber1").textContent) + (IDOldNumber + IDNumber);
+						if(IDOldNumber != 0)
+						{
+							document.getElementById(OppositeID).textContent = 0;
+							var IDNumber = Number(document.getElementById(ID).textContent);
+							document.getElementById(ID).textContent = 0;
+							var HomeNumber = Number(document.getElementById("IDNumber1").textContent);
+							document.getElementById("IDNumber1").textContent = Number(document.getElementById("IDNumber1").textContent) + (IDOldNumber + IDNumber);
+						}
 					}
 					else if(BottomSide.indexOf(ID) != -1)
 					{
 						var OppositeID = TopSide[BottomSide.indexOf(ID)];
 						var IDOldNumber = Number(document.getElementById(OppositeID).textContent);
-						document.getElementById(OppositeID).textContent = 0;
-						var IDNumber = Number(document.getElementById(ID).textContent);
-						document.getElementById(ID).textContent = 0;
-						var HomeNumber = Number(document.getElementById("IDNumber8").textContent);
-						document.getElementById("IDNumber8").textContent = Number(document.getElementById("IDNumber8").textContent) + (IDOldNumber + IDNumber);
+						if(IDOldNumber != 0)
+						{
+							document.getElementById(OppositeID).textContent = 0;
+							var IDNumber = Number(document.getElementById(ID).textContent);
+							document.getElementById(ID).textContent = 0;
+							var HomeNumber = Number(document.getElementById("IDNumber8").textContent);
+							document.getElementById("IDNumber8").textContent = Number(document.getElementById("IDNumber8").textContent) + (IDOldNumber + IDNumber);
+						}
 					}
 				}
 			}
