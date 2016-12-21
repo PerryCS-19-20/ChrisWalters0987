@@ -32,6 +32,8 @@
 					PlayersTurn = "Bottom";
 					GrabH2.InnerHTML = "Bottom Player Goes First";
 				}
+				var ChangeTurnInHTML = document.getElementById("WhosTurn");
+				ChangeTurnInHTML.textContent = "Players Turn: " + PlayersTurn;
 			}
 				
 			function MakeBored()
