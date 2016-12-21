@@ -77,7 +77,7 @@
 				var IDGiven = document.getElementById(MrID);
 				if(MrID != "IDNumber1" && MrID != "IDNumber8")
 				{
-					if (PlayersTurn == "Top") { // <-- \\
+					if (PlayersTurn == "Top" && TopArray.indexOf(MrID) < 5) { // <-- \\
 						IDGiven.textContent = "0";
 						var IDInArray = TopArray.indexOf(MrID);
 						for(C = 0; C <= NumbersOnID; C++)
