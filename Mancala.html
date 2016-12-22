@@ -136,7 +136,7 @@
 				var BottomSide = ["IDNumber10", "IDNumber11", "IDNumber12", "IDNumber13", "IDNumber14", "IDNumber15"];
 				if(Value == 0)
 				{
-					if(TopSide.indexOf(ID) != -1 && BottomSide.indexOf[IDGiven] != -1)
+					if(TopSide.indexOf(ID) != -1 && BottomSide.indexOf[GivenID] != -1)
 					{
 						var OppositeID = BottomSide[TopSide.indexOf(ID)];
 						var IDOldNumber = Number(document.getElementById(OppositeID).textContent);
@@ -149,7 +149,7 @@
 							document.getElementById("IDNumber1").textContent = Number(document.getElementById("IDNumber1").textContent) + (IDOldNumber + IDNumber);
 						}
 					}
-					else if(BottomSide.indexOf(ID) != -1 && TopSide.indexOf[IDGiven] != -1)
+					else if(BottomSide.indexOf(ID) != -1 && TopSide.indexOf[GivenID] != -1)
 					{
 						var OppositeID = TopSide[BottomSide.indexOf(ID)];
 						var IDOldNumber = Number(document.getElementById(OppositeID).textContent);
