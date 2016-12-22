@@ -170,14 +170,14 @@
 				var AllIDs = ["IDNumber2", "IDNumber3", "IDNumber4", "IDNumber5", "IDNumber6", "IDNumber7", "IDNumber10", "IDNumber11", "IDNumber12", "IDNumber13", "IDNumber14", "IDNumber15"]
 				var CheckTop = 0;
 				var CheckBottom = 0;
-				for(C = 0; C <= 6; C++)
+				for(C = 0; C < 6; C++)
 				{
 					var GetIDs = document.getElementById(AllIDs[C]);
 					var GetContent = GetIDs.textContent;
 					CheckTop += Number(GetContent);
 				}
 				
-				for(C = 7; C < 12; C++)
+				for(C = 6; C < 12; C++)
 				{
 					var GetIDs = document.getElementById(AllIDs[C]);
 					var GetContent = GetIDs.textContent;
@@ -186,7 +186,7 @@
 				
 				if(CheckTop == 0)
 				{
-					for(C = 6; C < 11; C++)
+					for(C = 6; C < 12; C++)
 					{
 						var GetIDs = document.getElementById(AllIDs[C]);
 						var GetContent = Number(GetIDs.textContent);
@@ -196,7 +196,7 @@
 				}
 				else if(CheckBottom == 0)
 				{
-					for(C = 0; C < 5; C++)
+					for(C = 0; C < 6; C++)
 					{
 						var GetIDs = document.getElementById(AllIDs[C]);
 						var GetContent = Number(GetIDs.textContent);
