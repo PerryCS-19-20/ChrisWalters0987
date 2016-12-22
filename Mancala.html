@@ -125,6 +125,7 @@
 						}
 					}
 					CheckCapture(LastID, OldValue);
+					CheckCaptureAll();
 					CheckIfWon();
 				}
 			}
@@ -164,15 +165,54 @@
 				}
 			}
 			
+			function CheckCaptureAll()
+			{
+				var AllIDs = ["IDNumber2", "IDNumber3", "IDNumber4", "IDNumber5", "IDNumber6", "IDNumber7", "IDNumber10", "IDNumber11", "IDNumber12", "IDNumber13", "IDNumber14", "IDNumber15"]
+				var CheckTop = 0;
+				var CheckBottom = 0;
+				for(C = 0; C < 5; C++)
+				{
+					var GetIDs = document.getElementById(AllIDs[C]);
+					var GetContent = GetIDs.textContent;
+					CheckTop += Number(GetContent);
+				}
+				
+				for(C = 6; C < 11; C++)
+				{
+					var GetIDs = document.getElementById(AllIDs[C]);
+					var GetContent = GetIDs.textContent;
+					CheckBottom += Number(GetContent);
+				}
+				
+				if(CheckTop == 0)
+				{
+					for(C = 6; C < 11; C++)
+					{
+						var GetIDs = document.getElementById(AllIDs[C]);
+						var GetContent = GetIDs.textContent;
+						GetIDs.textContent = 0;
+						document.getElementById("IDNumber8").textContent = Number(document.getElementById("IDNumber8").textContent) + GetContent;
+					}
+				}
+				else if(CheckBottom == 0)
+				{
+					for(C = 0; C < 5; C++)
+					{
+						var GetIDs = document.getElementById(AllIDs[C]);
+						var GetContent = GetIDs.textContent;
+						GetIDs.textContent = 0;
+						document.getElementById("IDNumber1").textContent = Number(document.getElementById("IDNumber1").textContent) + GetContent;
+					}
+				}
+			}
+			
 			function CheckIfWon(){
 				var AllIDs = ["IDNumber2", "IDNumber3", "IDNumber4", "IDNumber5", "IDNumber6", "IDNumber7", "IDNumber10", "IDNumber11", "IDNumber12", "IDNumber13", "IDNumber14", "IDNumber15"]
-				var KeepTrackOfEverything = [];
 				var NumberItAddsUpTo = 0;
 				for(C = 0; C < AllIDs.length; C++)
 				{
 					var GetIDs = document.getElementById(AllIDs[C]);
 					var GetContent = GetIDs.textContent;
-					KeepTrackOfEverything.push(GetContent);
 					NumberItAddsUpTo += Number(GetContent);
 				}
 				
@@ -197,18 +237,7 @@
 				
 			function WhoWins(PlayerWon)
 			{
-				if(PlayerWon == "Top")
-				{
-				
-				}
-				else if(PlayerWon == "Bottom")
-				{
-				
-				}
-				else if(PlayerWon == "No one")
-				{
-				
-				}
+				document.getElementById("WhosTurn").textContent = PlayerWon + " Won!!!";
 			}
 				
 			function CheckNumbers(MrID) {
