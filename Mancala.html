@@ -191,7 +191,7 @@
 						var GetIDs = document.getElementById(AllIDs[C]);
 						var GetContent = Number(GetIDs.textContent);
 						GetIDs.textContent = 0;
-						document.getElementById("IDNumber8").textContent = Number(document.getElementById("IDNumber8").textContent) + GetContent;
+						document.getElementById("IDNumber8").textContent = Number(document.getElementById("IDNumber8").textContent) + Number(GetContent);
 					}
 				}
 				else if(CheckBottom == 0)
@@ -201,7 +201,7 @@
 						var GetIDs = document.getElementById(AllIDs[C]);
 						var GetContent = Number(GetIDs.textContent);
 						GetIDs.textContent = 0;
-						document.getElementById("IDNumber1").textContent = Number(document.getElementById("IDNumber1").textContent) + GetContent;
+						document.getElementById("IDNumber1").textContent = Number(document.getElementById("IDNumber1").textContent) + Number(GetContent);
 					}
 				}
 			}
@@ -219,7 +219,7 @@
 				if(NumberItAddsUpTo == 0)
 				{
 					var TopCount = Number(document.getElementById("IDNumber1").textContent);
-					var BottomCount = Number(document.getElementById("IDNumber1").textContent);
+					var BottomCount = Number(document.getElementById("IDNumber8").textContent);
 					if(TopCount > BottomCount)
 					{
 						WhoWins("Top");
